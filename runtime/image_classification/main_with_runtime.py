@@ -315,13 +315,18 @@ def main():
 
             should_save_checkpoint = args.checkpoint_dir_not_nfs or r.rank_in_stage == 0
             if args.checkpoint_dir and should_save_checkpoint:
-                save_checkpoint({
+                checkpoint_data = {
                     'epoch': epoch + 1,
                     'arch': args.arch,
                     'state_dict': r.state_dict(),
                     'best_prec1': best_prec1,
                     'optimizer' : optimizer.state_dict(),
-                }, args.checkpoint_dir, r.stage)
+                }
+                save_checkpoint(checkpoint_data, args.checkpoint_dir, r.stage)
+                print('CHECKPOINT DATA')
+                print(checkpoint_data)
+                print('checkpoint_dir', args.checkpoint_dir)
+                print('stage', r.stage)
 
 
 def train(train_loader, r, optimizer, epoch):
