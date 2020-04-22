@@ -321,7 +321,7 @@ if __name__ == "__main__":
                 subprocess.check_output(launch_cmd, shell=True)
     else:
         for rank, worker in enumerate(workers):
-            docker_cmd = 'nvidia-docker run -d %(mount_directories)s ' \
+            docker_cmd = 'docker run -d %(mount_directories)s ' \
                          '--net=host ' \
                          '--ipc=host %(container)s /bin/bash -c' % {
                 "container": configurations[CONTAINER],
