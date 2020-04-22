@@ -277,7 +277,7 @@ if __name__ == "__main__":
         all_runtime_cmds = []
         for node_rank, (node_ip, workers) in \
             enumerate(nodes_to_workers_mapping.items()):
-            docker_cmd = 'nvidia-docker run -d %(mount_directories)s ' \
+            docker_cmd = 'docker run -d %(mount_directories)s ' \
                          '--net=host ' \
                          '--shm-size 16g %(container)s /bin/bash -c' % {
                 "container": configurations[CONTAINER],
