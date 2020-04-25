@@ -70,7 +70,7 @@ def create_service_yaml(training_id, rank):
 
 def save_yaml(yaml_dict, filepath):
     f = open(filepath, 'w+')
-    yaml.dump(yaml_dict, f, allow_unicode=True)
+    yaml.dump(yaml_dict, f, allow_unicode=True, default_flow_style=False)
     f.close()
 
 def create_kube_resource(filepath):
