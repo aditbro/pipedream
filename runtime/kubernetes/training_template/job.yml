@@ -3,17 +3,19 @@ kind: Job
 metadata:
   name: pipedream-train
 spec:
-  containers:
-  - image: nvcr.io/nvidia/pytorch:19.05-py3
-    name: train-container
-    volumeMounts:
-    - mountPath: /home/aditya
-      name: main-volume
-    resources:
-      limits:
-        nvidia.com/gpu: 1
-  volumes:
-  - name: main-volume
-    hostPath:
-      path: /home/aditya/
-      type: Directory
+  template:
+    spec:
+      containers:
+      - image: nvcr.io/nvidia/pytorch:19.05-py3
+        name: train-container
+        volumeMounts:
+        - mountPath: /home/aditya
+          name: main-volume
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      volumes:
+      - name: main-volume
+        hostPath:
+          path: /home/aditya/
+          type: Directory
