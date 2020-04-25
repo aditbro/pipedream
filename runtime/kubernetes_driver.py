@@ -45,7 +45,7 @@ def launch_worker(runtime_cmd, training_id, rank):
     
 
 def create_job_yaml(training_id, runtime_cmd, rank):
-    master_yaml = yaml.load(job_template_file)
+    master_yaml = load_yaml(job_template_file)
     master_yaml['spec']['containers'][0]['command'] = '/bin/bash'
     master_yaml['spec']['containers'][0]['args'] = runtime_cmd
     master_yaml['metadata']['labels'] = {
@@ -56,7 +56,7 @@ def create_job_yaml(training_id, runtime_cmd, rank):
     return master_yaml
 
 def create_service_yaml(training_id, rank):
-    service_yaml = yaml.load(service_template_file)
+    service_yaml = load_yaml(service_template_file)
     service_yaml['metadata']['labels'] = {
         'training_id': training_id,
         'rank': rank
@@ -67,6 +67,12 @@ def create_service_yaml(training_id, rank):
     }
 
     return service_yaml
+
+def load_yaml(filepath):
+    stream = file('db.yml', 'r')
+    loaded_yaml = yaml.load_all(stream)
+    
+    return loaded_yaml
 
 def save_yaml(yaml_dict, filepath):
     f = open(filepath, 'w+')
