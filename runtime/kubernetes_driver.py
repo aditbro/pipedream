@@ -57,6 +57,7 @@ def create_job_yaml(training_id, runtime_cmd, rank):
 
 def create_service_yaml(training_id, rank):
     service_yaml = load_yaml(service_template_file)
+    service_yaml['metadata']['name'] = 'pipedream-train-' + training_id + '-' + 'rank'
     service_yaml['metadata']['labels'] = {
         'training_id': str(training_id),
         'rank': str(rank)
