@@ -212,8 +212,7 @@ if __name__ == "__main__":
                                             main_with_runtime_folder,
                                          "python_path": python_path,
                                      })
-    runtime_cmd_list = ['%(main_runtime_filename)s '
-                        '--data_dir %(data_dir)s '
+    runtime_cmd_list = ['--data_dir %(data_dir)s '
                         '--module %(module)s '
                         '--checkpoint_dir %(checkpoint_dir)s '
                         '--distributed_backend %(distributed_backend)s ' % {
