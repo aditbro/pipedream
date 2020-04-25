@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pipedream-train
+  labels:
+    app: pipedream-train
+spec:
+  type: ClusterIP
+  ports:
+   - port: 29500
+  selector:
+   app: pipedream-train

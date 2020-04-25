@@ -8,6 +8,7 @@ import datetime
 import pkgutil
 import argparse
 import subprocess
+import kubernetes_driver
 
 
 # Required configuration fields.
@@ -213,12 +214,11 @@ if __name__ == "__main__":
                                      })
     runtime_cmd_list = ['%(main_runtime_filename)s '
                         '--data_dir %(data_dir)s '
-                        '--master_addr %(master_addr)s --module %(module)s '
+                        '--module %(module)s '
                         '--checkpoint_dir %(checkpoint_dir)s '
                         '--distributed_backend %(distributed_backend)s ' % {
                             "main_runtime_filename": main_runtime_filename,
                             "data_dir": configurations[DATA_DIR],
-                            "master_addr": workers[0].ip,
                             "module": configurations[MODULE],
                             "checkpoint_dir": output_dir,
                             "distributed_backend": configurations[DISTRIBUTED_BACKEND],
@@ -307,7 +307,6 @@ if __name__ == "__main__":
                 }
 
             runtime_cmd_list = runtime_cmd_preamble_list + [launch_module] + runtime_cmd_list
-            runtime_cmd_list.append('2>&1 | tee %s' % log_file_path)
             runtime_cmd = " ".join(runtime_cmd_list) + "; rm launch.py"
 
             launch_cmd = '%s \'%s\'' % (docker_cmd, runtime_cmd)
@@ -320,6 +319,8 @@ if __name__ == "__main__":
             if not args.quiet:
                 subprocess.check_output(launch_cmd, shell=True)
     else:
+        master_addr = ''
+        training_id = ''
         for rank, worker in enumerate(workers):
             docker_cmd = 'docker run --gpus all --rm --privileged -d %(mount_directories)s ' \
                          '--net=host ' \
@@ -341,18 +342,28 @@ if __name__ == "__main__":
 
             if CONFIG_FILE in configurations:
                 runtime_cmd_list.append('--config_path %s --rank %d --local_rank %d' % (
-                    configurations[CONFIG_FILE], rank, rank % num_ranks_in_server))
-            runtime_cmd_list.append('2>&1 | tee %s' % log_file_path)
+                    configurations[CONFIG_FILE], rank, 0))
             runtime_cmd = " ".join(runtime_cmd_list)
 
             launch_cmd = '%s \'%s\'' % (docker_cmd, runtime_cmd)
             if worker.ip != 'localhost':
                 launch_cmd = 'ssh -n %s -o StrictHostKeyChecking=no \"%s\"' % (worker.ip,
                                                                                launch_cmd)
-            print (launch_cmd)
-            command_history_file.write(launch_cmd + "\n")
+            print (runtime_cmd)
 
-            if not args.quiet:
-                subprocess.check_output(launch_cmd, shell=True)
+            # if not args.quiet:
+            #     subprocess.check_output(launch_cmd, shell=True)
+
+            if(rank == 0):
+                runtime_cmd_list.append(' --master_addr localhost')
+                runtime_cmd = " ".join(runtime_cmd_list)
+                training_data = kubernetes_driver.launch_master(runtime_cmd)
+                
+                master_addr = training_data['master_addr']
+                training_id = training_data['training_id']
+            else:
+                runtime_cmd_list.append(' --master_addr {}'.format(master_addr))
+                runtime_cmd = " ".join(runtime_cmd_list)
+                kubernetes_driver.launch_worker(runtime_cmd, rank, training_id)
 
     command_history_file.close()
