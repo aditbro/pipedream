@@ -47,7 +47,7 @@ def launch_worker(runtime_cmd, training_id, rank):
 def create_job_yaml(training_id, runtime_cmd, rank):
     master_yaml = load_yaml(job_template_file)
     master_yaml['spec']['template']['spec']['containers'][0]['command'] = '/bin/bash'
-    master_yaml['spec']['template']['spec']['containers'][0]['args'] = runtime_cmd
+    master_yaml['spec']['template']['spec']['containers'][0]['args'] = '[{}]'.format(runtime_cmd)
     master_yaml['metadata']['labels'] = {
         'training_id': str(training_id),
         'rank': str(rank)
