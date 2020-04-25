@@ -355,13 +355,13 @@ if __name__ == "__main__":
             if(rank == 0):
                 runtime_cmd_list.append(' --master_addr localhost')
                 runtime_cmd = " ".join(runtime_cmd_list)
-                training_data = kubernetes_driver.launch_master(runtime_cmd)
+                training_data = kubernetes_driver.launch_master(runtime_cmd_list)
                 
                 master_addr = training_data['master_addr']
                 training_id = training_data['training_id']
             else:
                 runtime_cmd_list.append(' --master_addr {}'.format(master_addr))
                 runtime_cmd = " ".join(runtime_cmd_list)
-                kubernetes_driver.launch_worker(runtime_cmd, training_id, rank)
+                kubernetes_driver.launch_worker(runtime_cmd_list, training_id, rank)
 
     command_history_file.close()
