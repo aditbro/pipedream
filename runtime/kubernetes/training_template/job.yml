@@ -14,7 +14,7 @@ spec:
         resources:
           limits:
             nvidia.com/gpu: 1
-        restartPolicy: OnFailure
+      restartPolicy: OnFailure
       volumes:
       - name: main-volume
         hostPath:
