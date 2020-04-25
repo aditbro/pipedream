@@ -269,7 +269,7 @@ if __name__ == "__main__":
     if MACROBATCH in configurations and configurations[MACROBATCH]:
         runtime_cmd_list.append('--macrobatch')
 
-    common_runtime_cmd = " ".join(runtime_cmd_list)
+    common_runtime_cmd = runtime_cmd_list
 
     # If launching in a single container per node, use launch utility to spawn
     # required number of processes in the same container.
@@ -336,9 +336,7 @@ if __name__ == "__main__":
             num_ranks_in_server = \
                 machine_to_workers_map[worker.ip] if not disable_gpu_gpu_communication else 1
 
-            runtime_cmd_list = [" ".join(runtime_cmd_preamble_list),
-                                common_runtime_cmd,
-                                '--num_ranks_in_server %d' % num_ranks_in_server]
+            runtime_cmd_list = common_runtime_cmd + ['--num_ranks_in_server %d' % num_ranks_in_server]
 
             if CONFIG_FILE in configurations:
                 runtime_cmd_list.append('--config_path %s --rank %d --local_rank %d' % (
