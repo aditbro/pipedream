@@ -9,6 +9,9 @@ spec:
     volumeMounts:
     - mountPath: /home/aditya
       name: main-volume
+    resources:
+      limits:
+        nvidia.com/gpu: 1
   volumes:
   - name: main-volume
     hostPath:
