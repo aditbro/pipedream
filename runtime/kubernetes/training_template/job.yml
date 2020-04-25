@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - image: custom_nvcr_io
-        imagePullPolicy: IfNotExist
+        imagePullPolicy: IfNotPresent
         name: train-container
         volumeMounts:
         - mountPath: /home/aditya
