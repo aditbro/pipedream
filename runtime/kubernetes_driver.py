@@ -28,7 +28,7 @@ def launch_master(runtime_cmd):
 
     master_ip = get_master_ip(training_id)
 
-    return {'training_id': training_id, 'master_ip': master_ip}
+    return {'training_id': training_id, 'master_addr': master_ip}
 
 def launch_worker(runtime_cmd, training_id, rank):
     config_dirs = yaml_files + training_id + '/{}/'.format(rank)
