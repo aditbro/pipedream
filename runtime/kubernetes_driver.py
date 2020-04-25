@@ -69,7 +69,7 @@ def create_service_yaml(training_id, rank):
     return service_yaml
 
 def load_yaml(filepath):
-    file = open('E:\data\fruits.yaml')
+    file = open(filepath)
     loaded_yaml = yaml.load(file, Loader=yaml.FullLoader)
     file.close()
     
