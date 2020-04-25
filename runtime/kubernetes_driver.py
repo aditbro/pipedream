@@ -49,8 +49,8 @@ def create_job_yaml(training_id, runtime_cmd, rank):
     master_yaml['spec']['containers'][0]['command'] = '/bin/bash'
     master_yaml['spec']['containers'][0]['args'] = runtime_cmd
     master_yaml['metadata']['labels'] = {
-        'training_id': training_id,
-        'rank': rank
+        'training_id': str(training_id),
+        'rank': str(rank)
     }
 
     return master_yaml
@@ -58,12 +58,12 @@ def create_job_yaml(training_id, runtime_cmd, rank):
 def create_service_yaml(training_id, rank):
     service_yaml = load_yaml(service_template_file)
     service_yaml['metadata']['labels'] = {
-        'training_id': training_id,
-        'rank': rank
+        'training_id': str(training_id),
+        'rank': str(rank)
     }
-    service_yaml['spec']['selector'] = {
-        'training_id': training_id,
-        'rank': rank
+    service_yaml['metadata']['labels'] = {
+        'training_id': str(training_id),
+        'rank': str(rank)
     }
 
     return service_yaml
