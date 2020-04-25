@@ -222,7 +222,8 @@ if __name__ == "__main__":
                         #     "module": configurations[MODULE],
                         #     "checkpoint_dir": output_dir,
                         #     "distributed_backend": configurations[DISTRIBUTED_BACKEND],
-                        }]
+                        #}
+                        ]
 
     # Add additional arguments.
     if BATCH_SIZE in configurations:
