@@ -212,15 +212,16 @@ if __name__ == "__main__":
                                             main_with_runtime_folder,
                                          "python_path": python_path,
                                      })
-    runtime_cmd_list = ['--data_dir %(data_dir)s '
-                        '--module %(module)s '
-                        '--checkpoint_dir %(checkpoint_dir)s '
-                        '--distributed_backend %(distributed_backend)s ' % {
-                            "main_runtime_filename": main_runtime_filename,
-                            "data_dir": configurations[DATA_DIR],
-                            "module": configurations[MODULE],
-                            "checkpoint_dir": output_dir,
-                            "distributed_backend": configurations[DISTRIBUTED_BACKEND],
+    runtime_cmd_list = ['--data_dir {} '.format(configurations[DATA_DIR]),
+                        '--module {} '.format(configurations[MODULE]),
+                        '--checkpoint_dir {} '.format(output_dir),
+                        '--distributed_backend {} '.format(configurations[DISTRIBUTED_BACKEND]) 
+                        # % {
+                        #     "main_runtime_filename": main_runtime_filename,
+                        #     "data_dir": configurations[DATA_DIR],
+                        #     "module": configurations[MODULE],
+                        #     "checkpoint_dir": output_dir,
+                        #     "distributed_backend": configurations[DISTRIBUTED_BACKEND],
                         }]
 
     # Add additional arguments.
