@@ -363,7 +363,7 @@ if __name__ == "__main__":
                 master_addr = training_data['master_addr']
                 training_id = training_data['training_id']
             else:
-                runtime_cmd_list.append(' --master_addr {}'.format(master_addr))
+                runtime_cmd_list.append('--master_addr {}'.format(master_addr))
                 runtime_cmd = " ".join(runtime_cmd_list)
                 kubernetes_driver.launch_worker(runtime_cmd_list, training_id, rank)
 

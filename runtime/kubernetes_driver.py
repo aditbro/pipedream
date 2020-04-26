@@ -50,6 +50,7 @@ def create_job_yaml(training_id, runtime_cmd, rank):
     master_yaml['spec']['template']['spec']['containers'][0]['command'] = ['python', 'kube_main.py']
     master_yaml['spec']['template']['spec']['containers'][0]['env'] = []
     
+    arg_list = ''
     for cmd in runtime_cmd:
         cmd = cmd.split(' ')
         cmd[0] = cmd[0].replace('-', 'Q')
@@ -57,6 +58,12 @@ def create_job_yaml(training_id, runtime_cmd, rank):
             'name': cmd[0],
             'value': cmd[1]
         })
+        arg_list += '{} '.format(cmd[0])
+
+    master_yaml['spec']['template']['spec']['containers'][0]['env'].append({
+        'name': 'arg_list',
+        'value': arg_list
+    })
 
     master_yaml['metadata']['labels'] = {
         'training_id': str(training_id),
