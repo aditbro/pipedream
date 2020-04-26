@@ -83,6 +83,10 @@ def create_service_yaml(training_id, rank):
         'training_id': str(training_id),
         'rank': str(rank)
     }
+    service_yaml['spec']['selectr'] = {
+        'training_id': str(training_id),
+        'rank': str(rank)
+    }
 
     return service_yaml
 
