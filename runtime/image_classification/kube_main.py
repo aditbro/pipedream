@@ -15,7 +15,7 @@ cmd = 'python -u main_with_runtime.py {}'.format(args_str)
 
 print('TRAINING INITIATING')
 
-time.sleep(3)
+time.sleep(10)
 
 os.system(cmd)
 
