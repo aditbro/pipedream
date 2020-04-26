@@ -50,7 +50,7 @@ def is_resuming():
         port="30513"
     )
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM running_training WHERE training_id={}".format(training_id))
+    cursor.execute("SELECT * FROM running_training WHERE training_id='{}'".format(training_id))
     training_record = cursor.fetchall()
 
     if(training_record.rowcount != 0):
