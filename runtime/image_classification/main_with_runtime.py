@@ -325,7 +325,7 @@ def main():
                 }
                 save_checkpoint(checkpoint_data, args.checkpoint_dir, r.stage)
                 print('checkpoint saved {}'.format(epoch))
-                if(epoch == 0):
+                if(epoch <= 1):
                     db.register_training()
 
 
