@@ -47,7 +47,7 @@ def launch_worker(runtime_cmd, training_id, rank):
 def create_job_yaml(training_id, runtime_cmd, rank):
     master_yaml = load_yaml(job_template_file)
     master_yaml['metadata']['name'] = 'pipedream-train-' + training_id + '-' + str(rank)
-    master_yaml['spec']['containers'][0]['command'] = ['python', 'kube_main.py']
+    master_yaml['spec']['containers'][0]['command'] = ['python', '-u', 'kube_main.py']
     master_yaml['spec']['containers'][0]['env'] = []
     
     arg_list = ''
