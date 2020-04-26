@@ -73,12 +73,12 @@ def wait_until_master_ready():
 
     r = requests.get(master_addr + ':' + port)
 
-    while(r.text != '1'):
+    while(r.text != '"1"'):
         time.sleep(1)
         r = requests.get(master_addr + ':' + port)
         print('master_status : {}'.format(r.text))
         
-        if(r.text == '3'):
+        if(r.text == '"3"'):
             requests.post(master_addr + ':' + port)
 
 def init_root_api():
