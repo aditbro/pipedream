@@ -72,7 +72,7 @@ def wait_until_master_ready():
     master_addr = 'http://' + os.getenv('QQmaster_addr')
     port = '8080'
 
-    r = requests.get(master_addr + ':' + port)
+    r = requests.get(master_addr + ':' + port, timeout=2)
     result = str(r.text)
     result = result.replace('"', '')
     result = result.replace('\n', '')
