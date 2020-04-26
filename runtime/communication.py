@@ -612,25 +612,33 @@ def recv_helper_thread(queue, counter, local_rank, tensor_name,
                        sub_process_group, num_iterations):
     torch.cuda.set_device(local_rank)
     # This method is to be executed from a helper daemon thread.
-    for i in range(num_iterations):
-        tensor = _recv(
-            tensor_name, src_rank, tensor_shape=tensor_shape,
-            dtype=dtype, tag=tag,
-            sub_process_group=sub_process_group)
-        queue.add(tensor)
-    counter.decrement()
+    try:
+        for i in range(num_iterations):
+            tensor = _recv(
+                tensor_name, src_rank, tensor_shape=tensor_shape,
+                dtype=dtype, tag=tag,
+                sub_process_group=sub_process_group)
+            queue.add(tensor)
+    except Exception as e:
+        counter.add_error(e)
+    finally:
+        counter.decrement()
 
 def send_helper_thread(queue, counter, local_rank, tensor_name,
                        src_rank, dst_rank, tag,
                        sub_process_group, num_iterations):
     torch.cuda.set_device(local_rank)
     # This method is to be executed from a helper daemon thread.
-    for i in range(num_iterations):
-        tensor = queue.remove()
-        _send(tensor, tensor_name, src_rank, dst_rank,
-              tag=tag,
-              sub_process_group=sub_process_group)
-    counter.decrement()
+    try:
+        for i in range(num_iterations):
+            tensor = queue.remove()
+            _send(tensor, tensor_name, src_rank, dst_rank,
+                tag=tag,
+                sub_process_group=sub_process_group)
+    except Exception as e:
+        counter.add_error(e)
+    finally:
+        counter.decrement()
 
 def _recv(tensor_name, src_rank, tensor_shape=None, dtype=torch.float32,
           tensor=None, tag=None, sub_process_group=None):

@@ -10,6 +10,7 @@ class Counter:
     def __init__(self, initial_count):
         self.count = initial_count
         self.cv = threading.Condition()
+        self.error = None
 
     def decrement(self):
         self.cv.acquire()
@@ -17,8 +18,17 @@ class Counter:
         self.cv.notify_all()
         self.cv.release()
 
+    def add_error(self, error):
+        if not self.error:
+            self.error = error
+
     def wait(self):
         self.cv.acquire()
         while self.count > 0:
             self.cv.wait()
         self.cv.release()
+        self.evaluate_error()
+
+    def evaluate_error(self):
+        if self.error:
+            raise self.error
