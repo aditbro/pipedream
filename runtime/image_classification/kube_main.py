@@ -12,6 +12,8 @@ for arg in arg_list.split(' ')[:-1]:
 
 cmd = 'python -u main_with_runtime.py {}'.format(args_str)
 
+print('TRAINING INITIATING')
+
 os.system(cmd)
 
 print('PROCESS EXIT')
