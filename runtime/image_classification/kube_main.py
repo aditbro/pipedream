@@ -12,7 +12,7 @@ for arg in arg_list.split(' ')[:-1]:
 
 cmd = 'python -u main_with_runtime.py {}'.format(args_str)
 
-subprocess.run(cmd, shell='/bin/bash')
+os.system(cmd)
 
 print('PROCESS EXIT')
 
