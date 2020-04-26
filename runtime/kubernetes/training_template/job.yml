@@ -9,8 +9,9 @@ spec:
       - image: custom_nvcr_io
         imagePullPolicy: IfNotPresent
         name: train-container
+        workingDir: /home/aditya/ta_nb/ta/pipedream/runtime/image_classification/
         volumeMounts:
-        - mountPath: /home/aditya
+        - mountPath: /home/aditya/
           name: main-volume
         resources:
           limits:
