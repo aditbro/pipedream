@@ -76,6 +76,7 @@ def wait_until_master_ready():
     while(r.text != '1'):
         time.sleep(1)
         r = requests.get(master_addr + ':' + port)
+        print('master_status : {}'.format(r.text))
 
 def init_root_api():
     cmd = 'python ../http_comm.py'
