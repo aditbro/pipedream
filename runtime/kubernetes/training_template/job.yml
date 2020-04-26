@@ -2,6 +2,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: pipedream-train
+  labels:
+    app: pipedream-train
 spec:
   template:
     spec:
