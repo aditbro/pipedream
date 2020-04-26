@@ -212,18 +212,17 @@ if __name__ == "__main__":
                                             main_with_runtime_folder,
                                          "python_path": python_path,
                                      })
-    runtime_cmd_list = ['--data_dir {} '.format(configurations[DATA_DIR]),
-                        '--module {} '.format(configurations[MODULE]),
-                        '--checkpoint_dir {} '.format(output_dir),
-                        '--distributed_backend {} '.format(configurations[DISTRIBUTED_BACKEND]) 
-                        # % {
-                        #     "main_runtime_filename": main_runtime_filename,
-                        #     "data_dir": configurations[DATA_DIR],
-                        #     "module": configurations[MODULE],
-                        #     "checkpoint_dir": output_dir,
-                        #     "distributed_backend": configurations[DISTRIBUTED_BACKEND],
-                        #}
-                        ]
+    runtime_cmd_list = ['%(main_runtime_filename)s '
+                        '--data_dir %(data_dir)s '
+                        '--module %(module)s '
+                        '--checkpoint_dir %(checkpoint_dir)s '
+                        '--distributed_backend %(distributed_backend)s ' % {
+                            "main_runtime_filename": main_runtime_filename,
+                            "data_dir": configurations[DATA_DIR],
+                            "module": configurations[MODULE],
+                            "checkpoint_dir": output_dir,
+                            "distributed_backend": configurations[DISTRIBUTED_BACKEND],
+                        }]
 
     # Add additional arguments.
     if BATCH_SIZE in configurations:
@@ -270,7 +269,7 @@ if __name__ == "__main__":
     if MACROBATCH in configurations and configurations[MACROBATCH]:
         runtime_cmd_list.append('--macrobatch')
 
-    common_runtime_cmd = runtime_cmd_list
+    common_runtime_cmd = " ".join(runtime_cmd_list)
 
     # If launching in a single container per node, use launch utility to spawn
     # required number of processes in the same container.
@@ -337,7 +336,9 @@ if __name__ == "__main__":
             num_ranks_in_server = \
                 machine_to_workers_map[worker.ip] if not disable_gpu_gpu_communication else 1
 
-            runtime_cmd_list = common_runtime_cmd + ['--num_ranks_in_server %d' % num_ranks_in_server]
+            runtime_cmd_list = [" ".join(runtime_cmd_preamble_list),
+                                common_runtime_cmd,
+                                '--num_ranks_in_server %d' % num_ranks_in_server]
 
             if CONFIG_FILE in configurations:
                 runtime_cmd_list.append('--config_path %s --rank %d --local_rank %d' % (
@@ -356,13 +357,13 @@ if __name__ == "__main__":
             if(rank == 0):
                 runtime_cmd_list.append(' --master_addr localhost')
                 runtime_cmd = " ".join(runtime_cmd_list)
-                training_data = kubernetes_driver.launch_master(runtime_cmd_list)
+                training_data = kubernetes_driver.launch_master(runtime_cmd)
                 
                 master_addr = training_data['master_addr']
                 training_id = training_data['training_id']
             else:
                 runtime_cmd_list.append(' --master_addr {}'.format(master_addr))
                 runtime_cmd = " ".join(runtime_cmd_list)
-                kubernetes_driver.launch_worker(runtime_cmd_list, training_id, rank)
+                kubernetes_driver.launch_worker(runtime_cmd, training_id, rank)
 
     command_history_file.close()
