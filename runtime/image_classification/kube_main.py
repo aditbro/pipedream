@@ -68,7 +68,7 @@ def get_resume_args():
     return '--resume {}'.format(checkpoint_dir)
 
 def wait_until_master_ready():
-    master_addr = os.getenv('QQmaster_addr')
+    master_addr = 'http://' + os.getenv('QQmaster_addr')
     port = '8080'
 
     r = requests.get(master_addr + ':' + port)
