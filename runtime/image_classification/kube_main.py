@@ -53,7 +53,7 @@ def is_resuming():
     cursor.execute("SELECT * FROM running_training WHERE training_id='{}'".format(training_id))
     training_record = cursor.fetchall()
 
-    if(training_record.rowcount != 0):
+    if(len(training_record) > 0):
         return True
     else:
         return False
