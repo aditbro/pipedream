@@ -13,4 +13,4 @@ def get_status():
     f = open('/workspace/status', 'r')
     status = f.readline()
     f.close()
-    return status
+    return status[0]
