@@ -23,6 +23,7 @@ def main():
     else:
         init_root_api()
 
+    print(run_cmd)
     os.system(run_cmd)
 
     print('PROCESS EXIT')
@@ -84,7 +85,7 @@ def wait_until_master_ready():
         result = result.replace('\n', '')
         print('master_status : {}'.format(result))
         
-        if(result == '3'):
+        if(result == '2'):
             requests.post(master_addr + ':' + port)
 
 def init_root_api():
