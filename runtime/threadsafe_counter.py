@@ -29,8 +29,3 @@ class Counter:
         while self.count > 0:
             self.cv.wait()
         self.cv.release()
-        self.evaluate_error()
-
-    def evaluate_error(self):
-        if self.error:
-            raise self.error

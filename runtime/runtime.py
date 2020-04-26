@@ -611,7 +611,7 @@ class StageRuntime:
                                                         for output_name in outputs]))
         except Exception as e:
             container.terminate()
-            raise e
+            print(e)
 
         # Input tensors don't need gradients.
         for input_name in inputs:
