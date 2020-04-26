@@ -64,6 +64,11 @@ def create_job_yaml(training_id, runtime_cmd, rank):
         'name': 'arg_list',
         'value': arg_list
     })
+    
+    master_yaml['spec']['containers'][0]['env'].append({
+        'name': 'training_id',
+        'value': training_id
+    })
 
     master_yaml['metadata']['labels'] = {
         'training_id': str(training_id),

@@ -2,8 +2,25 @@ import subprocess
 import os
 import time
 
+# import psycopg2
+
 arg_list = os.getenv('arg_list')
+training_id = os.getenv('training_id')
 args_str = ''
+
+# conn = psycopg2.connect(
+#     user="postgresadmin",
+#     database="postgresdb",
+#     password="admin123",
+#     host="167.205.35.252",
+#     port="30513"
+# )
+# cursor = conn.cursor()
+# cursor.execute("SELECT * FROM running_training WHERE training_id={}".format(training_id))
+# training_record = cursor.fetchall()
+
+# if(training_record.rowcount != 0):
+#     pass
 
 os.system('echo 0 > /workspace/healthcheck')
 
@@ -15,7 +32,8 @@ cmd = 'python -u main_with_runtime.py {}'.format(args_str)
 
 print('TRAINING INITIATING')
 
-time.sleep(10)
+if(os.getenv('QQrank') != '0'):
+    time.sleep(20)
 
 os.system(cmd)
 
