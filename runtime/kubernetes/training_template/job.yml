@@ -1,26 +1,24 @@
 apiVersion: batch/v1
-kind: Job
+kind: Pod
 metadata:
   name: pipedream-train
   labels:
     app: pipedream-train
 spec:
-  template:
-    spec:
-      containers:
-      - image: custom_nvcr_io
-        imagePullPolicy: IfNotPresent
-        name: train-container
-        workingDir: /home/aditya/ta_nb/ta/pipedream/runtime/image_classification/
-        volumeMounts:
-        - mountPath: /home/aditya/
-          name: main-volume
-        resources:
-          limits:
-            nvidia.com/gpu: 1
-      restartPolicy: OnFailure
-      volumes:
-      - name: main-volume
-        hostPath:
-          path: /home/aditya/
-          type: Directory
+  containers:
+  - image: custom_nvcr_io
+    imagePullPolicy: IfNotPresent
+    name: train-container
+    workingDir: /home/aditya/ta_nb/ta/pipedream/runtime/image_classification/
+    volumeMounts:
+    - mountPath: /home/aditya/
+      name: main-volume
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+  restartPolicy: OnFailure
+  volumes:
+  - name: main-volume
+    hostPath:
+      path: /home/aditya/
+      type: Directory
