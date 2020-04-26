@@ -323,10 +323,7 @@ def main():
                     'optimizer' : optimizer.state_dict(),
                 }
                 save_checkpoint(checkpoint_data, args.checkpoint_dir, r.stage)
-                print('CHECKPOINT DATA')
-                print(checkpoint_data)
-                print('checkpoint_dir', args.checkpoint_dir)
-                print('stage', r.stage)
+                print('checkpoint saved {}'.format(epoch))
 
 
 def train(train_loader, r, optimizer, epoch):
