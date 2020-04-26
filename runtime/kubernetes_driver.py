@@ -64,7 +64,7 @@ def create_job_yaml(training_id, runtime_cmd, rank):
         'name': 'arg_list',
         'value': arg_list
     })
-    
+
     master_yaml['spec']['containers'][0]['env'].append({
         'name': 'training_id',
         'value': training_id
@@ -72,7 +72,8 @@ def create_job_yaml(training_id, runtime_cmd, rank):
 
     master_yaml['metadata']['labels'] = {
         'training_id': str(training_id),
-        'rank': str(rank)
+        'rank': str(rank),
+        'group': 'pipedream-train'
     }
 
     return master_yaml
@@ -82,11 +83,8 @@ def create_service_yaml(training_id, rank):
     service_yaml['metadata']['name'] = 'pipedream-train-' + training_id + '-' + str(rank)
     service_yaml['metadata']['labels'] = {
         'training_id': str(training_id),
-        'rank': str(rank)
-    }
-    service_yaml['metadata']['labels'] = {
-        'training_id': str(training_id),
-        'rank': str(rank)
+        'rank': str(rank),
+        'group': 'pipedream-train'
     }
     service_yaml['spec']['selector'] = {
         'training_id': str(training_id),
