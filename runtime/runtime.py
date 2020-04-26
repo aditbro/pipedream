@@ -2,10 +2,12 @@
 # Licensed under the MIT license.
 
 import collections
+import container
 import itertools
 import time
 import torch
 import torch.distributed as dist
+import os
 
 import communication
 import runtime_utilities
@@ -608,7 +610,7 @@ class StageRuntime:
                                     grad_tensors=tuple([output_gradients[output_name]
                                                         for output_name in outputs]))
         except Exception as e:
-            print(e)
+            container.terminate()
             raise e
 
         # Input tensors don't need gradients.

@@ -18,6 +18,13 @@ spec:
     resources:
       limits:
         nvidia.com/gpu: 1
+    livenessProbe:
+      exec:
+        command:
+        - python
+        - /home/aditya/ta_nb/ta/pipedream/runtime/healthcheck.py
+      initialDelaySeconds: 5
+      periodSeconds: 5
   restartPolicy: OnFailure
   volumes:
   - name: main-volume

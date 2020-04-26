@@ -1,6 +1,7 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT license.
 
+import container
 import threading
 
 """
@@ -19,6 +20,7 @@ class Counter:
         self.cv.release()
 
     def add_error(self, error):
+        container.terminate()
         if not self.error:
             self.error = error
 
