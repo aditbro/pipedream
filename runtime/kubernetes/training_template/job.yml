@@ -23,8 +23,8 @@ spec:
         command:
         - python
         - /home/aditya/ta_nb/ta/pipedream/runtime/healthcheck.py
-      initialDelaySeconds: 5
-      periodSeconds: 5
+      initialDelaySeconds: 0
+      periodSeconds: 1
   restartPolicy: OnFailure
   volumes:
   - name: main-volume
