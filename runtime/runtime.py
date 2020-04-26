@@ -603,9 +603,13 @@ class StageRuntime:
             outputs["loss"] *= self.loss_scale
 
         # Perform backward pass.
-        torch.autograd.backward(tuple([outputs[output_name] for output_name in outputs]),
-                                grad_tensors=tuple([output_gradients[output_name]
-                                                    for output_name in outputs]))
+        try:
+            torch.autograd.backward(tuple([outputs[output_name] for output_name in outputs]),
+                                    grad_tensors=tuple([output_gradients[output_name]
+                                                        for output_name in outputs]))
+        except Exception as e:
+            print(e)
+            raise e
 
         # Input tensors don't need gradients.
         for input_name in inputs:
