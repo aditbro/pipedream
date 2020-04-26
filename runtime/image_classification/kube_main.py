@@ -78,7 +78,7 @@ def wait_until_master_ready():
 
     while(result != '1'):
         time.sleep(1)
-        r = requests.get(master_addr + ':' + port)
+        r = requests.get(master_addr + ':' + port, timeout=2)
         result = str(r.text)
         result = result.replace('"', '')
         result = result.replace('\n', '')
