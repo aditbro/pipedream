@@ -7,11 +7,17 @@ api = Api(app)
 
 class Control(Resource):
     def get(self):
-        return 'running'
+        status = container.get_status()
+        return status
     
     def post(self):
-        container.terminate()
-        return 'terminating'
+        status = container.get_status()
+        
+        if(status == '2'):
+            container.terminate()
+            return 'terminating'
+        else:
+            return 'running'
 
 api.add_resource(Control, '/')
 

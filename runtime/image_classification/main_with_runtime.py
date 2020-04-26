@@ -9,6 +9,7 @@ import os
 import shutil
 import sys
 import time
+import db
 
 import torch
 from torch.autograd import Variable
@@ -324,6 +325,8 @@ def main():
                 }
                 save_checkpoint(checkpoint_data, args.checkpoint_dir, r.stage)
                 print('checkpoint saved {}'.format(epoch))
+                if(epoch == 0):
+                    db.register_training()
 
 
 def train(train_loader, r, optimizer, epoch):
@@ -505,6 +508,7 @@ def save_checkpoint(state, checkpoint_dir, stage):
     checkpoint_file_path = os.path.join(checkpoint_dir, "checkpoint.%d.pth.tar" % stage)
     torch.save(state, checkpoint_file_path)
     print("Saved checkpoint to %s" % checkpoint_file_path)
+    
 
 
 class AverageMeter(object):

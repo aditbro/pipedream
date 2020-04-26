@@ -14,3 +14,6 @@ RUN apt update
 RUN apt install -y libpq-dev
 
 RUN pip install psycopg2
+RUN pip install flask
+RUN pip install flask_restful
+RUN pip install requests

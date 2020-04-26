@@ -1,6 +1,7 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT license.
 
+import container
 import os
 import threading
 import torch
@@ -39,11 +40,16 @@ class CommunicationHandler(object):
         # Initialize the distributed environment.
         os.environ['MASTER_ADDR'] = master_addr
         os.environ['MASTER_PORT'] = str(master_port)
+
         print('WAITING FOR COMM INITIALIZATION')
+        container.update_status(1)
+
         dist.init_process_group(backend, rank=rank, world_size=world_size)
         assert dist.get_world_size() == self.world_size
+        
         print("Finished initializing process group; backend: %s, rank: %d, "
               "world_size: %d" % (backend, rank, world_size))
+        container.update_status(2)
 
         # Stores list of ranks of GPUs on the same server.
         self.ranks_in_server = []
