@@ -13,5 +13,6 @@ def register_training():
     print('\n\n REGISTERING TRAINING {} \n\n'.format(training_id))
     cursor = conn.cursor()
     cursor.execute("INSERT INTO running_training(training_id) VALUES ('{}')".format(training_id))
+    conn.commit()
     cursor.close()
     conn.close()
