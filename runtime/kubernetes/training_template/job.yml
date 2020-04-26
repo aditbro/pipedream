@@ -13,6 +13,8 @@ spec:
     volumeMounts:
     - mountPath: /home/aditya/
       name: main-volume
+    - mountPath: /dev/shm
+      name: dshm
     resources:
       limits:
         nvidia.com/gpu: 1
@@ -22,3 +24,6 @@ spec:
     hostPath:
       path: /home/aditya/
       type: Directory
+  - name: dshm
+    emptyDir:
+      medium: Memory
