@@ -74,12 +74,14 @@ def wait_until_master_ready():
     r = requests.get(master_addr + ':' + port)
     result = str(r.text)
     result = result.replace('"', '')
+    result = result.replace('\n', '')
 
     while(result != '1'):
         time.sleep(1)
         r = requests.get(master_addr + ':' + port)
         result = str(r.text)
         result = result.replace('"', '')
+        result = result.replace('\n', '')
         print('master_status : {}'.format(result))
         
         if(result == '3'):
