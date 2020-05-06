@@ -76,11 +76,11 @@ def create_job_yaml(training_id, runtime_cmd, rank):
         'group': 'pipedream-train'
     }
 
-    master_yaml['metadata']['labels'].append({
+    master_yaml['metadata']['labels'] = {
         'training_id': str(training_id),
         'rank': str(rank),
         'group': 'pipedream-train'
-    })
+    }
 
     return master_yaml
 
