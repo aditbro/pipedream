@@ -54,27 +54,33 @@ def create_job_yaml(training_id, runtime_cmd, rank):
     for cmd in runtime_cmd:
         cmd = cmd.split(' ')
         cmd[0] = cmd[0].replace('-', 'Q')
-        master_yaml['spec']['containers'][0]['env'].append({
+        master_yaml['spec']['template']['spec']['containers'][0]['env'].append({
             'name': cmd[0],
             'value': cmd[1]
         })
         arg_list += '{} '.format(cmd[0])
 
-    master_yaml['spec']['containers'][0]['env'].append({
+    master_yaml['spec']['template']['spec']['containers'][0]['env'].append({
         'name': 'arg_list',
         'value': arg_list
     })
 
-    master_yaml['spec']['containers'][0]['env'].append({
+    master_yaml['spec']['template']['spec']['containers'][0]['env'].append({
         'name': 'training_id',
         'value': training_id
     })
 
-    master_yaml['metadata']['labels'] = {
+    master_yaml['spec']['template']['metadata']['labels'] = {
         'training_id': str(training_id),
         'rank': str(rank),
         'group': 'pipedream-train'
     }
+
+    master_yaml['metadata']['labels'].append({
+        'training_id': str(training_id),
+        'rank': str(rank),
+        'group': 'pipedream-train'
+    })
 
     return master_yaml
 

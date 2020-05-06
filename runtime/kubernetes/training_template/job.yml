@@ -1,36 +1,42 @@
-apiVersion: v1
-kind: Pod
+apiVersion: batch/v1
+kind: Job
 metadata:
   name: pipedream-train
   labels:
     app: pipedream-train
 spec:
-  containers:
-  - image: custom_nvcr_io
-    imagePullPolicy: IfNotPresent
-    name: train-container
-    workingDir: /home/aditya/ta_nb/ta/pipedream/runtime/image_classification/
-    volumeMounts:
-    - mountPath: /home/aditya/
-      name: main-volume
-    - mountPath: /dev/shm
-      name: dshm
-    resources:
-      limits:
-        nvidia.com/gpu: 1
-    livenessProbe:
-      exec:
-        command:
-        - python
-        - /home/aditya/ta_nb/ta/pipedream/runtime/healthcheck.py
-      initialDelaySeconds: 0
-      periodSeconds: 1
-  restartPolicy: OnFailure
-  volumes:
-  - name: main-volume
-    hostPath:
-      path: /home/aditya/
-      type: Directory
-  - name: dshm
-    emptyDir:
-      medium: Memory
+  template:
+    metadata:
+      name: pipedream-train
+      labels:
+        app: pipedream-train
+    spec:
+      containers:
+      - image: custom_nvcr_io
+        imagePullPolicy: IfNotPresent
+        name: train-container
+        workingDir: /home/aditya/ta_nb/ta/pipedream/runtime/image_classification/
+        volumeMounts:
+        - mountPath: /home/aditya/
+          name: main-volume
+        - mountPath: /dev/shm
+          name: dshm
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+        livenessProbe:
+          exec:
+            command:
+            - python
+            - /home/aditya/ta_nb/ta/pipedream/runtime/healthcheck.py
+          initialDelaySeconds: 0
+          periodSeconds: 1
+      restartPolicy: OnFailure
+      volumes:
+      - name: main-volume
+        hostPath:
+          path: /home/aditya/
+          type: Directory
+      - name: dshm
+        emptyDir:
+          medium: Memory
