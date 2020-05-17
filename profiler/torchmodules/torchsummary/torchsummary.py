@@ -34,30 +34,31 @@ def summary(model, module_whitelist, model_input, verbose, device="cuda"):
             class_name = str(module.__class__).split('.')[-1].split("'")[0]
             module_idx = len(summary)
 
-            summary.append(OrderedDict())
-            summary[-1]['layer_name'] = module
-            summary[-1]['input_shape'] = list(input[0].size())
+            curr_layer = OrderedDict()
+            curr_layer['layer_name'] = module
+            curr_layer['input_shape'] = list(input[0].size())
             if isinstance(output, (list,tuple)):
-                summary[-1]['output_shape'] = []
+                curr_layer['output_shape'] = []
                 for o in output:
                     if isinstance(o, (list,tuple)):
-                        summary[-1]['output_shape'].extend(
+                        curr_layer['output_shape'].extend(
                             [list(o_elem.size()) for o_elem in o])
                     else:
-                        summary[-1]['output_shape'].append(list(o.size()))
+                        curr_layer['output_shape'].append(list(o.size()))
             else:
-                summary[-1]['output_shape'] = list(output.size())
+                curr_layer['output_shape'] = list(output.size())
 
             params = 0
             for name, param in module.named_parameters():
                 if 'weight' in name:
                     params += torch.prod(torch.LongTensor(list(param.size())))
-                    summary[-1]['trainable'] = param.requires_grad
+                    curr_layer['trainable'] = param.requires_grad
                 elif 'bias' in name:
                     params += torch.prod(torch.LongTensor(list(param.size())))
-            summary[-1]['nb_params'] = params
-            summary[-1]['forward_time'] = 0.0
-            summary[-1]['backward_time'] = 0.0
+            curr_layer['nb_params'] = params
+            curr_layer['forward_time'] = 0.0
+            curr_layer['backward_time'] = 0.0
+            summary.append(curr_layer)
 
         hooks.append(module.register_forward_hook(hook))
                 
