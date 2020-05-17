@@ -29,10 +29,12 @@ def hook_modules(register_fn, module, module_whitelist):
 
 def summary(model, module_whitelist, model_input, verbose, device="cuda"):
     mapping = {}
+    module_last_idx = 0
     def register_hook(module):
         def hook(module, input, output):
             class_name = str(module.__class__).split('.')[-1].split("'")[0]
-            module_idx = len(summary)
+            module_idx = module_last_idx
+            module_last_idx += 1
 
             curr_layer = OrderedDict()
             curr_layer['layer_name'] = module
