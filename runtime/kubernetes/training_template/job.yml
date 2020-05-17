@@ -21,7 +21,7 @@ spec:
           name: main-volume
         - mountPath: /dev/shm
           name: dshm
-        - mountPath: /data/
+        - mountPath: /radi/adit/data/
           name: data-volume
         resources:
           limits:
