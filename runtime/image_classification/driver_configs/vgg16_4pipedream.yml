@@ -1,6 +1,6 @@
 'log_directory': '/home/aditya/ta_log/'
 'module': 'models.vgg16.gpus=4'
-'data_dir': '/home/aditya/ta_nb/cifar10-img/'
+'data_dir': '/data/ImageNet/'
 'config_file': 'models/vgg16/gpus=4/hybrid_conf.json'
 'container': 'custom_nvcr_io'
 'machines': ['localhost:0', 'localhost:0', 'localhost:0', 'localhost:0']

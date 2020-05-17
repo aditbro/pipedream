@@ -44,5 +44,5 @@ spec:
           medium: Memory
       - name: data-volume
         hostPath:
-          path: /raid/adit/data/ImageNet/
+          path: /raid/adit/data/
           type: Directory
