@@ -59,6 +59,7 @@ def summary(model, module_whitelist, model_input, verbose, device="cuda"):
             curr_layer['forward_time'] = 0.0
             curr_layer['backward_time'] = 0.0
             summary.append(curr_layer)
+            print(curr_layer['nb_params'], module_idx)
 
         hooks.append(module.register_forward_hook(hook))
                 
@@ -89,6 +90,7 @@ def summary(model, module_whitelist, model_input, verbose, device="cuda"):
     trainable_params = 0
     for layer_id in range(len(summary)):
         # input_shape, output_shape, trainable, nb_params
+        print(layer_id)
         line_new = '%s\t%s\t%s' % (summary[layer_id]['layer_name'], str(summary[layer_id]['output_shape']), '{0:,}'.format(summary[layer_id]['nb_params']))
         total_params += summary[layer_id]['nb_params']
         if 'trainable' in summary[layer_id]:
