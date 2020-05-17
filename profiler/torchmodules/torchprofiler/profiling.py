@@ -106,6 +106,7 @@ class Profiling(object):
         sub_modules = module.__dict__['_modules']
 
         for name, sub_module in sub_modules.items():
+            print(sub_module)
 
             # nn.Module is the only thing we care about.
             if sub_module is None or isinstance(sub_module, torch.nn.Module) is False:
