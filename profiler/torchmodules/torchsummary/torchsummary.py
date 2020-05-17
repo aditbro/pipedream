@@ -32,8 +32,7 @@ def summary(model, module_whitelist, model_input, verbose, device="cuda"):
     def register_hook(module):
         def hook(module, input, output):
             class_name = str(module.__class__).split('.')[-1].split("'")[0]
-            module_idx = module_last_idx
-            module_last_idx += 1
+            module_idx = len(summary)
 
             curr_layer = OrderedDict()
             curr_layer['layer_name'] = module
@@ -74,7 +73,6 @@ def summary(model, module_whitelist, model_input, verbose, device="cuda"):
 
     summary = []
     hooks = []
-    module_last_idx = 0
     # register hook
     hook_modules(register_hook, model, module_whitelist)
     # make a forward pass
