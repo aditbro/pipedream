@@ -106,7 +106,6 @@ class Profiling(object):
         sub_modules = module.__dict__['_modules']
 
         for name, sub_module in sub_modules.items():
-            print(sub_module)
 
             # nn.Module is the only thing we care about.
             if sub_module is None or isinstance(sub_module, torch.nn.Module) is False:
@@ -120,7 +119,10 @@ class Profiling(object):
                 #
                 self.hook_modules(sub_module)
             else:
-                sub_module.reset_hooks()
+                try:
+                    sub_module.reset_hooks()
+                except:
+                    pass
                 #
                 # Hook nn.Module with no descendants.
                 #
@@ -184,5 +186,8 @@ class Profiling(object):
                 #
                 self.unhook_modules(sub_module)
             else:
-                sub_module.reset_hooks()
+                try:
+                    sub_module.reset_hooks()
+                except:
+                    pass
                 sub_module.forward = self.forward_original_methods[sub_module]
