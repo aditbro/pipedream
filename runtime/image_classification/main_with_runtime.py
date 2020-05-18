@@ -331,8 +331,8 @@ def main():
 
                 epoch_statistic = {
                     'epoch': epoch + 1,
-                    'best_prec1': best_prec1,
-                    'best_prec5': best_prec5,
+                    'prec1': prec1,
+                    'prec5': prec5,
                     'epoch_time': epoch_time
                 }
                 save_epoch_statistic(epoch_statistic, args.checkpoint_dir, r.stage)
@@ -524,7 +524,7 @@ def save_checkpoint(state, checkpoint_dir, stage):
 def save_epoch_statistic(stat, checkpoint_dir, stage):
     stat_file_path = os.path.join(checkpoint_dir, "stat.%d.csv" % stage)
     stat_data = '{},{},{},{}'.format(
-        stat['epoch'], stat['best_prec1'], stat['best_prec5'], stat['epoch_time']
+        stat['epoch'], stat['prec1'], stat['prec5'], stat['epoch_time']
     )
     f = open(stat_file_path, 'a')
     f.write(stat_data + '\n')
