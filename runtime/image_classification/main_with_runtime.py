@@ -312,7 +312,7 @@ def main():
 
             # evaluate on validation set
             prec1, prec5 = validate(val_loader, r, epoch)
-            if r.stage != r.num_stages: prec1 = 0
+            # if r.stage != r.num_stages: prec1 = 0
 
             # remember best prec@1 and save checkpoint
             best_prec1 = max(prec1, best_prec1)
@@ -513,7 +513,6 @@ def validate(val_loader, r, epoch):
         print('Epoch %d: %.3f seconds' % (epoch, time.time() - epoch_start_time))
         print("Epoch start time: %.3f, epoch end time: %.3f" % (epoch_start_time, time.time()))
 
-    print('validation accuracy ', top1.avg, top5.avg)
     return top1.avg, top5.avg
 
 
