@@ -513,6 +513,7 @@ def validate(val_loader, r, epoch):
         print('Epoch %d: %.3f seconds' % (epoch, time.time() - epoch_start_time))
         print("Epoch start time: %.3f, epoch end time: %.3f" % (epoch_start_time, time.time()))
 
+    print('validation accuracy ', top1.avg, top5.avg)
     return top1.avg, top5.avg
 
 
