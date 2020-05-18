@@ -119,7 +119,7 @@ class SyntheticDataset(torch.utils.data.dataset.Dataset):
         return self.length
 
 def main():
-    global args, best_prec1
+    global args, best_prec1, best_prec5
     args = parser.parse_args()
 
     torch.cuda.set_device(args.local_rank)
