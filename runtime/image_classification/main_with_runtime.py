@@ -95,6 +95,7 @@ parser.add_argument('--macrobatch', action='store_true',
                     help='Macrobatch updates to save memory')
 
 best_prec1 = 0
+best_prec5 = 0
 
 
 # Helper methods.
@@ -305,14 +306,17 @@ def main():
         if args.forward_only:
             validate(val_loader, r, epoch)
         else:
+            start_time = time.time()
             train(train_loader, r, optimizer, epoch)
+            epoch_time = start_time - time.time()
 
             # evaluate on validation set
-            prec1 = validate(val_loader, r, epoch)
+            prec1, prec5 = validate(val_loader, r, epoch)
             if r.stage != r.num_stages: prec1 = 0
 
             # remember best prec@1 and save checkpoint
             best_prec1 = max(prec1, best_prec1)
+            best_prec5 = max(prec5, best_prec5)
 
             should_save_checkpoint = args.checkpoint_dir_not_nfs or r.rank_in_stage == 0
             if args.checkpoint_dir and should_save_checkpoint:
@@ -324,6 +328,14 @@ def main():
                     'optimizer' : optimizer.state_dict(),
                 }
                 save_checkpoint(checkpoint_data, args.checkpoint_dir, r.stage)
+
+                epoch_statistic = {
+                    'epoch': epoch + 1,
+                    'best_prec1': best_prec1,
+                    'best_prec5': best_prec5,
+                    'epoch_time': epoch_time
+                }
+                save_epoch_statistic(epoch_statistic, args.checkpoint_dir, r.stage)
                 print('checkpoint saved {}'.format(epoch))
                 if(epoch == 0):
                     db.register_training()
@@ -500,7 +512,7 @@ def validate(val_loader, r, epoch):
         print('Epoch %d: %.3f seconds' % (epoch, time.time() - epoch_start_time))
         print("Epoch start time: %.3f, epoch end time: %.3f" % (epoch_start_time, time.time()))
 
-    return top1.avg
+    return top1.avg, top5.avg
 
 
 def save_checkpoint(state, checkpoint_dir, stage):
@@ -509,6 +521,14 @@ def save_checkpoint(state, checkpoint_dir, stage):
     torch.save(state, checkpoint_file_path)
     print("Saved checkpoint to %s" % checkpoint_file_path)
     
+def save_epoch_statistic(stat, checkpoint_dir, stage):
+    stat_file_path = os.path.join(checkpoint_dir, "stat.%d.csv" % stage)
+    stat_data = '{},{},{},{}'.format(
+        stat['epoch'], stat['best_prec1'], stat['best_prec5'], stat['epoch_time']
+    )
+    f = open(stat_file_path, 'a')
+    f.write(stat_data + '\n')
+    f.close()
 
 
 class AverageMeter(object):
