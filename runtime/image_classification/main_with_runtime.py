@@ -308,7 +308,7 @@ def main():
         else:
             start_time = time.time()
             train(train_loader, r, optimizer, epoch)
-            epoch_time = start_time - time.time()
+            epoch_time = time.time() - start_time
 
             # evaluate on validation set
             prec1, prec5 = validate(val_loader, r, epoch)
@@ -335,6 +335,7 @@ def main():
                     'prec5': prec5,
                     'epoch_time': epoch_time
                 }
+                print(epoch_statistic)
                 save_epoch_statistic(epoch_statistic, args.checkpoint_dir, r.stage)
                 print('checkpoint saved {}'.format(epoch))
                 if(epoch == 0):
