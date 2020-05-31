@@ -1,0 +1,85 @@
+2020-05-29 06:55:03 - INFO - 0 - Saving results to: results/gnmt_wmt16
+2020-05-29 06:55:03 - INFO - 0 - Run arguments: Namespace(apex_message_size=10000000.0, arch='gnmt', batch_size=64, beam_size=5, bucketing=True, cov_penalty_factor=0.1, cuda=True, cudnn=True, dataset_dir='/data/wmt16_de_en', disable_eval=False, enable_apex_allreduce_overlap=False, epochs=20, grad_clip=5.0, intra_epoch_eval=0, keep_checkpoints=0, len_norm_const=5.0, len_norm_factor=0.6, local_rank=0, math='fp32', max_length_test=150, max_length_train=50, max_length_val=150, max_size=None, min_length_test=0, min_length_train=0, min_length_val=0, model_config="{'num_layers': 4, 'hidden_size': 1024, 'dropout':0.2, 'share_embedding': False}", optimization_config="{'optimizer': 'FusedAdam', 'lr': 1.75e-3}", print_freq=10, rank=0, results_dir='results', resume=None, save='gnmt_wmt16', save_all=False, save_freq=5000, save_path='results/gnmt_wmt16', scheduler_config="{'lr_method':'mlperf', 'warmup_iters':1000, 'remain_steps':1450, 'decay_steps':40}", seed=None, smoothing=0.1, start_epoch=0, target_bleu=21.8, test_batch_size=128, test_loader_workers=0, train_loader_workers=2, val_batch_size=64, val_loader_workers=0)
+2020-05-29 06:55:06 - INFO - 0 - L2 promotion: 128B
+2020-05-29 06:55:06 - INFO - 0 - Using random master seed: 2167040857
+2020-05-29 06:55:06 - INFO - 0 - Worker 0 is using worker seed: 2197743376
+2020-05-29 06:55:06 - INFO - 0 - Building vocabulary from /data/wmt16_de_en/vocab.bpe.32000
+2020-05-29 06:55:06 - INFO - 0 - Size of vocabulary: 37016
+2020-05-29 06:55:06 - INFO - 0 - Processing data from /data/wmt16_de_en/train.tok.clean.bpe.32000.en
+2020-05-29 06:55:09 - INFO - 0 - Processing data from /data/wmt16_de_en/train.tok.clean.bpe.32000.de
+2020-05-29 06:55:13 - INFO - 0 - Filtering data, min len: 0, max len: 50
+2020-05-29 06:55:22 - INFO - 0 - Pairs before: 4500966, after: 3789377
+2020-05-29 06:55:23 - INFO - 0 - Processing data from /data/wmt16_de_en/newstest_dev.tok.clean.bpe.32000.en
+2020-05-29 06:56:48 - INFO - 0 - Processing data from /data/wmt16_de_en/newstest_dev.tok.clean.bpe.32000.de
+2020-05-29 06:58:16 - INFO - 0 - Filtering data, min len: 0, max len: 150
+2020-05-29 06:58:27 - INFO - 0 - Pairs before: 4500966, after: 4499888
+2020-05-29 06:59:14 - INFO - 0 - Processing data from /data/wmt16_de_en/newstest2014.tok.bpe.32000.en
+2020-05-29 06:59:14 - INFO - 0 - Filtering data, min len: 0, max len: 150
+2020-05-29 06:59:14 - INFO - 0 - Pairs before: 3003, after: 3003
+2020-05-29 06:59:16 - INFO - 0 - GNMT(
+  (encoder): ResidualRecurrentEncoder(
+    (rnn_layers): ModuleList(
+      (0): EmuBidirLSTM(
+        (bidir): LSTM(1024, 1024, bidirectional=True)
+        (layer1): LSTM(1024, 1024)
+        (layer2): LSTM(1024, 1024)
+      )
+      (1): LSTM(2048, 1024)
+      (2): LSTM(1024, 1024)
+      (3): LSTM(1024, 1024)
+    )
+    (dropout): Dropout(p=0.2)
+    (embedder): Embedding(37016, 1024, padding_idx=0)
+  )
+  (decoder): ResidualRecurrentDecoder(
+    (att_rnn): RecurrentAttention(
+      (rnn): LSTM(1024, 1024)
+      (attn): BahdanauAttention(
+        (linear_q): Linear(in_features=1024, out_features=1024, bias=False)
+        (linear_k): Linear(in_features=1024, out_features=1024, bias=False)
+        (dropout): Dropout(p=0)
+      )
+      (dropout): Dropout(p=0)
+    )
+    (rnn_layers): ModuleList(
+      (0): LSTM(2048, 1024)
+      (1): LSTM(2048, 1024)
+      (2): LSTM(2048, 1024)
+    )
+    (embedder): Embedding(37016, 1024, padding_idx=0)
+    (classifier): Classifier(
+      (classifier): Linear(in_features=1024, out_features=37016, bias=True)
+    )
+    (dropout): Dropout(p=0.2)
+  )
+)
+2020-05-29 06:59:16 - INFO - 0 - Building LabelSmoothingLoss (smoothing: 0.1)
+2020-05-29 06:59:16 - INFO - 0 - Training optimizer: {'optimizer': 'FusedAdam', 'lr': 0.00175}
+2020-05-29 06:59:16 - INFO - 0 - Training LR Schedule: {'lr_method': 'mlperf', 'warmup_iters': 1000, 'remain_steps': 1450, 'decay_steps': 40}
+2020-05-29 06:59:16 - INFO - 0 - Number of parameters: 208197785
+2020-05-29 06:59:17 - INFO - 0 - Saving state of the tokenizer
+2020-05-29 06:59:19 - INFO - 0 - Initializing fp32 optimizer
+2020-05-29 06:59:19 - INFO - 0 - Using optimizer: FusedAdam (
+Parameter Group 0
+    betas: (0.9, 0.999)
+    bias_correction: True
+    eps: 1e-08
+    initial_lr: 0.00175
+    lr: 1.7500000000000463e-05
+    max_grad_norm: 0.0
+    weight_decay: 0.0
+)
+2020-05-29 06:59:19 - INFO - 0 - Starting epoch 0
+2020-05-29 06:59:21 - INFO - 0 - Sampler for epoch 0 uses seed 871894953
+2020-05-29 06:59:23 - INFO - 0 - Sampler for epoch 0 uses seed 871894953
+2020-05-29 06:59:24 - INFO - 0 - TRAIN [0][0/59209]	Time 1.471 (0.000)	Data 1.31035 (0.00000)	Tok/s 1634 (0)	Loss/tok 10.5177 (0.0000)	Learning Rate [1.7500000000000463e-05]
+2020-05-29 06:59:26 - INFO - 0 - TRAIN [0][10/59209]	Time 0.174 (0.209)	Data 0.00113 (0.00111)	Tok/s 17380 (17784)	Loss/tok 10.4894 (10.5031)	Learning Rate [1.8324749590891222e-05]
+2020-05-29 06:59:27 - INFO - 0 - TRAIN [0][20/59209]	Time 0.189 (0.184)	Data 0.00134 (0.00116)	Tok/s 15827 (17219)	Loss/tok 10.4327 (10.4849)	Learning Rate [1.9188368432506234e-05]
+2020-05-29 06:59:29 - INFO - 0 - TRAIN [0][30/59209]	Time 0.262 (0.175)	Data 0.00139 (0.00119)	Tok/s 16990 (16671)	Loss/tok 10.2807 (10.4481)	Learning Rate [2.0092688376195964e-05]
+2020-05-29 06:59:31 - INFO - 0 - TRAIN [0][40/59209]	Time 0.265 (0.184)	Data 0.00126 (0.00121)	Tok/s 19512 (16847)	Loss/tok 9.6011 (10.3020)	Learning Rate [2.103962760580526e-05]
+2020-05-29 06:59:33 - INFO - 0 - TRAIN [0][50/59209]	Time 0.128 (0.179)	Data 0.00118 (0.00122)	Tok/s 16962 (16911)	Loss/tok 9.0117 (10.1332)	Learning Rate [2.2031194706398482e-05]
+2020-05-29 06:59:34 - INFO - 0 - TRAIN [0][60/59209]	Time 0.124 (0.174)	Data 0.00121 (0.00123)	Tok/s 17361 (16893)	Loss/tok 8.8094 (9.9650)	Learning Rate [2.3069492924737698e-05]
+2020-05-29 06:59:36 - INFO - 0 - TRAIN [0][70/59209]	Time 0.108 (0.178)	Data 0.00144 (0.00124)	Tok/s 15669 (16902)	Loss/tok 8.3663 (9.7647)	Learning Rate [2.415672463055108e-05]
+2020-05-29 06:59:38 - INFO - 0 - TRAIN [0][80/59209]	Time 0.271 (0.180)	Data 0.00149 (0.00125)	Tok/s 18918 (16955)	Loss/tok 8.4549 (9.5800)	Learning Rate [2.5295195988054346e-05]
+2020-05-29 06:59:40 - INFO - 0 - TRAIN [0][90/59209]	Time 0.198 (0.177)	Data 0.00145 (0.00127)	Tok/s 16838 (16920)	Loss/tok 8.2618 (9.4532)	Learning Rate [2.648732184763428e-05]
+2020-05-29 06:59:42 - INFO - 0 - TRAIN [0][100/59209]	Time 0.139 (0.179)	Data 0.00156 (0.00129)	Tok/s 17678 (17052)	Loss/tok 8.2271 (9.3079)	Learning Rate [2.7735630868070147e-05]

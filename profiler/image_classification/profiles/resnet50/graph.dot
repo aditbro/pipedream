@@ -2,357 +2,357 @@ digraph {
 	node1 [label="Input0
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=0.0,parameter_size=0.0]"]
 	node2 [label="Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
-[forward_compute_time=11.771,backward_compute_time=7.294,activation_size=411041792.0,parameter_size=37632.0]"]
+[forward_compute_time=9.334,backward_compute_time=4.224,activation_size=411041792.0,parameter_size=37632.0]"]
 	node3 [label="BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=2.876,backward_compute_time=5.885,activation_size=411041792.0,parameter_size=512.0]"]
+[forward_compute_time=1.845,backward_compute_time=3.313,activation_size=411041792.0,parameter_size=512.0]"]
 	node4 [label="ReLU(inplace)
-[forward_compute_time=2.860,backward_compute_time=2.908,activation_size=411041792.0,parameter_size=0.0]"]
+[forward_compute_time=1.097,backward_compute_time=1.590,activation_size=411041792.0,parameter_size=0.0]"]
 	node5 [label="MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
-[forward_compute_time=2.175,backward_compute_time=5.357,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=1.025,backward_compute_time=2.430,activation_size=102760448.0,parameter_size=0.0]"]
 	node6 [label="Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.426,backward_compute_time=3.333,activation_size=102760448.0,parameter_size=16384.0]"]
+[forward_compute_time=0.402,backward_compute_time=2.012,activation_size=102760448.0,parameter_size=16384.0]"]
 	node7 [label="BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.543,backward_compute_time=1.857,activation_size=102760448.0,parameter_size=512.0]"]
+[forward_compute_time=0.530,backward_compute_time=0.617,activation_size=102760448.0,parameter_size=512.0]"]
 	node8 [label="ReLU(inplace)
-[forward_compute_time=1.681,backward_compute_time=1.604,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.425,backward_compute_time=0.417,activation_size=102760448.0,parameter_size=0.0]"]
 	node9 [label="Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=2.389,backward_compute_time=8.028,activation_size=102760448.0,parameter_size=147456.0]"]
+[forward_compute_time=1.762,backward_compute_time=4.238,activation_size=102760448.0,parameter_size=147456.0]"]
 	node10 [label="BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.524,backward_compute_time=1.725,activation_size=102760448.0,parameter_size=512.0]"]
+[forward_compute_time=0.527,backward_compute_time=0.620,activation_size=102760448.0,parameter_size=512.0]"]
 	node11 [label="ReLU(inplace)
-[forward_compute_time=1.612,backward_compute_time=1.518,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.300,backward_compute_time=0.417,activation_size=102760448.0,parameter_size=0.0]"]
 	node12 [label="Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.485,backward_compute_time=6.152,activation_size=411041792.0,parameter_size=65536.0]"]
+[forward_compute_time=1.293,backward_compute_time=3.436,activation_size=411041792.0,parameter_size=65536.0]"]
 	node13 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=3.024,backward_compute_time=4.695,activation_size=411041792.0,parameter_size=2048.0]"]
+[forward_compute_time=1.686,backward_compute_time=2.315,activation_size=411041792.0,parameter_size=2048.0]"]
 	node14 [label="Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.367,backward_compute_time=6.194,activation_size=411041792.0,parameter_size=65536.0]"]
+[forward_compute_time=1.286,backward_compute_time=3.429,activation_size=411041792.0,parameter_size=65536.0]"]
 	node15 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=2.868,backward_compute_time=4.808,activation_size=411041792.0,parameter_size=2048.0]"]
+[forward_compute_time=1.683,backward_compute_time=2.283,activation_size=411041792.0,parameter_size=2048.0]"]
 	node16 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=411041792.0,parameter_size=0.0]"]
 	node17 [label="ReLU(inplace)
-[forward_compute_time=5.439,backward_compute_time=5.778,activation_size=411041792.0,parameter_size=0.0]"]
+[forward_compute_time=2.594,backward_compute_time=3.079,activation_size=411041792.0,parameter_size=0.0]"]
 	node18 [label="Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.311,backward_compute_time=6.446,activation_size=102760448.0,parameter_size=65536.0]"]
+[forward_compute_time=0.992,backward_compute_time=3.910,activation_size=102760448.0,parameter_size=65536.0]"]
 	node19 [label="BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.694,backward_compute_time=1.749,activation_size=102760448.0,parameter_size=512.0]"]
+[forward_compute_time=0.524,backward_compute_time=0.612,activation_size=102760448.0,parameter_size=512.0]"]
 	node20 [label="ReLU(inplace)
-[forward_compute_time=1.397,backward_compute_time=1.605,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.300,backward_compute_time=0.416,activation_size=102760448.0,parameter_size=0.0]"]
 	node21 [label="Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=2.377,backward_compute_time=8.170,activation_size=102760448.0,parameter_size=147456.0]"]
+[forward_compute_time=1.391,backward_compute_time=4.230,activation_size=102760448.0,parameter_size=147456.0]"]
 	node22 [label="BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.636,backward_compute_time=1.898,activation_size=102760448.0,parameter_size=512.0]"]
+[forward_compute_time=0.527,backward_compute_time=0.615,activation_size=102760448.0,parameter_size=512.0]"]
 	node23 [label="ReLU(inplace)
-[forward_compute_time=0.956,backward_compute_time=1.826,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.302,backward_compute_time=0.442,activation_size=102760448.0,parameter_size=0.0]"]
 	node24 [label="Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.116,backward_compute_time=6.050,activation_size=411041792.0,parameter_size=65536.0]"]
+[forward_compute_time=1.279,backward_compute_time=3.428,activation_size=411041792.0,parameter_size=65536.0]"]
 	node25 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=3.114,backward_compute_time=5.092,activation_size=411041792.0,parameter_size=2048.0]"]
+[forward_compute_time=1.686,backward_compute_time=2.296,activation_size=411041792.0,parameter_size=2048.0]"]
 	node26 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=411041792.0,parameter_size=0.0]"]
 	node27 [label="ReLU(inplace)
-[forward_compute_time=4.740,backward_compute_time=5.837,activation_size=411041792.0,parameter_size=0.0]"]
+[forward_compute_time=2.601,backward_compute_time=3.084,activation_size=411041792.0,parameter_size=0.0]"]
 	node28 [label="Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.086,backward_compute_time=7.750,activation_size=102760448.0,parameter_size=65536.0]"]
+[forward_compute_time=0.991,backward_compute_time=4.453,activation_size=102760448.0,parameter_size=65536.0]"]
 	node29 [label="BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.775,backward_compute_time=1.937,activation_size=102760448.0,parameter_size=512.0]"]
+[forward_compute_time=0.521,backward_compute_time=0.609,activation_size=102760448.0,parameter_size=512.0]"]
 	node30 [label="ReLU(inplace)
-[forward_compute_time=1.276,backward_compute_time=1.689,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.299,backward_compute_time=0.419,activation_size=102760448.0,parameter_size=0.0]"]
 	node31 [label="Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=2.511,backward_compute_time=9.848,activation_size=102760448.0,parameter_size=147456.0]"]
+[forward_compute_time=1.386,backward_compute_time=4.768,activation_size=102760448.0,parameter_size=147456.0]"]
 	node32 [label="BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=2.082,backward_compute_time=1.981,activation_size=102760448.0,parameter_size=512.0]"]
+[forward_compute_time=0.533,backward_compute_time=0.608,activation_size=102760448.0,parameter_size=512.0]"]
 	node33 [label="ReLU(inplace)
-[forward_compute_time=1.331,backward_compute_time=1.819,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.301,backward_compute_time=0.544,activation_size=102760448.0,parameter_size=0.0]"]
 	node34 [label="Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.037,backward_compute_time=7.419,activation_size=411041792.0,parameter_size=65536.0]"]
+[forward_compute_time=1.279,backward_compute_time=3.976,activation_size=411041792.0,parameter_size=65536.0]"]
 	node35 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=2.789,backward_compute_time=5.335,activation_size=411041792.0,parameter_size=2048.0]"]
+[forward_compute_time=1.694,backward_compute_time=2.353,activation_size=411041792.0,parameter_size=2048.0]"]
 	node36 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=411041792.0,parameter_size=0.0]"]
 	node37 [label="ReLU(inplace)
-[forward_compute_time=4.764,backward_compute_time=6.308,activation_size=411041792.0,parameter_size=0.0]"]
+[forward_compute_time=2.586,backward_compute_time=3.076,activation_size=411041792.0,parameter_size=0.0]"]
 	node38 [label="Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.876,backward_compute_time=10.486,activation_size=205520896.0,parameter_size=131072.0]"]
+[forward_compute_time=1.891,backward_compute_time=5.521,activation_size=205520896.0,parameter_size=131072.0]"]
 	node39 [label="BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.785,backward_compute_time=2.407,activation_size=205520896.0,parameter_size=1024.0]"]
+[forward_compute_time=0.921,backward_compute_time=1.169,activation_size=205520896.0,parameter_size=1024.0]"]
 	node40 [label="ReLU(inplace)
-[forward_compute_time=1.639,backward_compute_time=2.129,activation_size=205520896.0,parameter_size=0.0]"]
+[forward_compute_time=0.562,backward_compute_time=0.803,activation_size=205520896.0,parameter_size=0.0]"]
 	node41 [label="Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
-[forward_compute_time=3.028,backward_compute_time=13.106,activation_size=51380224.0,parameter_size=589824.0]"]
+[forward_compute_time=2.047,backward_compute_time=7.224,activation_size=51380224.0,parameter_size=589824.0]"]
 	node42 [label="BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.447,backward_compute_time=1.399,activation_size=51380224.0,parameter_size=1024.0]"]
+[forward_compute_time=0.319,backward_compute_time=0.332,activation_size=51380224.0,parameter_size=1024.0]"]
 	node43 [label="ReLU(inplace)
-[forward_compute_time=1.035,backward_compute_time=1.601,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.169,backward_compute_time=0.229,activation_size=51380224.0,parameter_size=0.0]"]
 	node44 [label="Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.838,backward_compute_time=4.932,activation_size=205520896.0,parameter_size=262144.0]"]
+[forward_compute_time=1.042,backward_compute_time=2.262,activation_size=205520896.0,parameter_size=262144.0]"]
 	node45 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.853,backward_compute_time=2.481,activation_size=205520896.0,parameter_size=4096.0]"]
+[forward_compute_time=0.869,backward_compute_time=1.112,activation_size=205520896.0,parameter_size=4096.0]"]
 	node46 [label="Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
-[forward_compute_time=3.006,backward_compute_time=11.459,activation_size=205520896.0,parameter_size=524288.0]"]
+[forward_compute_time=2.012,backward_compute_time=6.442,activation_size=205520896.0,parameter_size=524288.0]"]
 	node47 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.628,backward_compute_time=2.225,activation_size=205520896.0,parameter_size=4096.0]"]
+[forward_compute_time=0.864,backward_compute_time=1.127,activation_size=205520896.0,parameter_size=4096.0]"]
 	node48 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=205520896.0,parameter_size=0.0]"]
 	node49 [label="ReLU(inplace)
-[forward_compute_time=2.215,backward_compute_time=2.444,activation_size=205520896.0,parameter_size=0.0]"]
+[forward_compute_time=1.322,backward_compute_time=1.535,activation_size=205520896.0,parameter_size=0.0]"]
 	node50 [label="Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.092,backward_compute_time=5.069,activation_size=51380224.0,parameter_size=262144.0]"]
+[forward_compute_time=0.982,backward_compute_time=2.788,activation_size=51380224.0,parameter_size=262144.0]"]
 	node51 [label="BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.251,backward_compute_time=1.402,activation_size=51380224.0,parameter_size=1024.0]"]
+[forward_compute_time=0.324,backward_compute_time=0.443,activation_size=51380224.0,parameter_size=1024.0]"]
 	node52 [label="ReLU(inplace)
-[forward_compute_time=1.057,backward_compute_time=1.093,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.169,backward_compute_time=0.228,activation_size=51380224.0,parameter_size=0.0]"]
 	node53 [label="Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=1.969,backward_compute_time=4.863,activation_size=51380224.0,parameter_size=589824.0]"]
+[forward_compute_time=1.139,backward_compute_time=2.344,activation_size=51380224.0,parameter_size=589824.0]"]
 	node54 [label="BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.426,backward_compute_time=1.260,activation_size=51380224.0,parameter_size=1024.0]"]
+[forward_compute_time=0.821,backward_compute_time=0.335,activation_size=51380224.0,parameter_size=1024.0]"]
 	node55 [label="ReLU(inplace)
-[forward_compute_time=1.003,backward_compute_time=1.031,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.169,backward_compute_time=0.365,activation_size=51380224.0,parameter_size=0.0]"]
 	node56 [label="Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.822,backward_compute_time=4.540,activation_size=205520896.0,parameter_size=262144.0]"]
+[forward_compute_time=1.035,backward_compute_time=2.468,activation_size=205520896.0,parameter_size=262144.0]"]
 	node57 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=2.071,backward_compute_time=2.044,activation_size=205520896.0,parameter_size=4096.0]"]
+[forward_compute_time=0.868,backward_compute_time=1.496,activation_size=205520896.0,parameter_size=4096.0]"]
 	node58 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=205520896.0,parameter_size=0.0]"]
 	node59 [label="ReLU(inplace)
-[forward_compute_time=2.267,backward_compute_time=2.282,activation_size=205520896.0,parameter_size=0.0]"]
+[forward_compute_time=1.294,backward_compute_time=1.516,activation_size=205520896.0,parameter_size=0.0]"]
 	node60 [label="Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.912,backward_compute_time=5.038,activation_size=51380224.0,parameter_size=262144.0]"]
+[forward_compute_time=0.978,backward_compute_time=2.517,activation_size=51380224.0,parameter_size=262144.0]"]
 	node61 [label="BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.478,backward_compute_time=1.103,activation_size=51380224.0,parameter_size=1024.0]"]
+[forward_compute_time=0.320,backward_compute_time=0.587,activation_size=51380224.0,parameter_size=1024.0]"]
 	node62 [label="ReLU(inplace)
-[forward_compute_time=1.288,backward_compute_time=0.968,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.167,backward_compute_time=0.478,activation_size=51380224.0,parameter_size=0.0]"]
 	node63 [label="Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=1.969,backward_compute_time=4.281,activation_size=51380224.0,parameter_size=589824.0]"]
+[forward_compute_time=1.118,backward_compute_time=2.359,activation_size=51380224.0,parameter_size=589824.0]"]
 	node64 [label="BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.553,backward_compute_time=1.087,activation_size=51380224.0,parameter_size=1024.0]"]
+[forward_compute_time=0.317,backward_compute_time=0.336,activation_size=51380224.0,parameter_size=1024.0]"]
 	node65 [label="ReLU(inplace)
-[forward_compute_time=1.160,backward_compute_time=1.000,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.168,backward_compute_time=0.348,activation_size=51380224.0,parameter_size=0.0]"]
 	node66 [label="Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.876,backward_compute_time=4.387,activation_size=205520896.0,parameter_size=262144.0]"]
+[forward_compute_time=1.043,backward_compute_time=2.649,activation_size=205520896.0,parameter_size=262144.0]"]
 	node67 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.992,backward_compute_time=1.890,activation_size=205520896.0,parameter_size=4096.0]"]
+[forward_compute_time=0.872,backward_compute_time=2.167,activation_size=205520896.0,parameter_size=4096.0]"]
 	node68 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=205520896.0,parameter_size=0.0]"]
 	node69 [label="ReLU(inplace)
-[forward_compute_time=2.475,backward_compute_time=2.059,activation_size=205520896.0,parameter_size=0.0]"]
+[forward_compute_time=1.295,backward_compute_time=1.641,activation_size=205520896.0,parameter_size=0.0]"]
 	node70 [label="Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.180,backward_compute_time=5.259,activation_size=51380224.0,parameter_size=262144.0]"]
+[forward_compute_time=0.978,backward_compute_time=4.107,activation_size=51380224.0,parameter_size=262144.0]"]
 	node71 [label="BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.464,backward_compute_time=1.008,activation_size=51380224.0,parameter_size=1024.0]"]
+[forward_compute_time=0.320,backward_compute_time=0.690,activation_size=51380224.0,parameter_size=1024.0]"]
 	node72 [label="ReLU(inplace)
-[forward_compute_time=1.449,backward_compute_time=0.833,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.169,backward_compute_time=0.233,activation_size=51380224.0,parameter_size=0.0]"]
 	node73 [label="Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=2.132,backward_compute_time=5.108,activation_size=51380224.0,parameter_size=589824.0]"]
+[forward_compute_time=1.107,backward_compute_time=2.911,activation_size=51380224.0,parameter_size=589824.0]"]
 	node74 [label="BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.576,backward_compute_time=0.880,activation_size=51380224.0,parameter_size=1024.0]"]
+[forward_compute_time=0.320,backward_compute_time=0.337,activation_size=51380224.0,parameter_size=1024.0]"]
 	node75 [label="ReLU(inplace)
-[forward_compute_time=1.221,backward_compute_time=1.043,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.169,backward_compute_time=0.236,activation_size=51380224.0,parameter_size=0.0]"]
 	node76 [label="Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.995,backward_compute_time=4.866,activation_size=205520896.0,parameter_size=262144.0]"]
+[forward_compute_time=1.047,backward_compute_time=2.608,activation_size=205520896.0,parameter_size=262144.0]"]
 	node77 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=2.036,backward_compute_time=1.891,activation_size=205520896.0,parameter_size=4096.0]"]
+[forward_compute_time=0.866,backward_compute_time=1.120,activation_size=205520896.0,parameter_size=4096.0]"]
 	node78 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=205520896.0,parameter_size=0.0]"]
 	node79 [label="ReLU(inplace)
-[forward_compute_time=2.653,backward_compute_time=2.613,activation_size=205520896.0,parameter_size=0.0]"]
+[forward_compute_time=1.291,backward_compute_time=1.518,activation_size=205520896.0,parameter_size=0.0]"]
 	node80 [label="Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=3.484,backward_compute_time=8.102,activation_size=102760448.0,parameter_size=524288.0]"]
+[forward_compute_time=1.864,backward_compute_time=4.677,activation_size=102760448.0,parameter_size=524288.0]"]
 	node81 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.655,backward_compute_time=1.988,activation_size=102760448.0,parameter_size=2048.0]"]
+[forward_compute_time=0.518,backward_compute_time=0.602,activation_size=102760448.0,parameter_size=2048.0]"]
 	node82 [label="ReLU(inplace)
-[forward_compute_time=1.647,backward_compute_time=1.203,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.300,backward_compute_time=0.472,activation_size=102760448.0,parameter_size=0.0]"]
 	node83 [label="Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
-[forward_compute_time=4.574,backward_compute_time=9.402,activation_size=25690112.0,parameter_size=2359296.0]"]
+[forward_compute_time=2.264,backward_compute_time=5.821,activation_size=25690112.0,parameter_size=2359296.0]"]
 	node84 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.361,backward_compute_time=1.256,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.242,backward_compute_time=0.193,activation_size=25690112.0,parameter_size=2048.0]"]
 	node85 [label="ReLU(inplace)
-[forward_compute_time=1.296,backward_compute_time=0.989,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.103,backward_compute_time=0.131,activation_size=25690112.0,parameter_size=0.0]"]
 	node86 [label="Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.122,backward_compute_time=4.695,activation_size=102760448.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.058,backward_compute_time=2.331,activation_size=102760448.0,parameter_size=1048576.0]"]
 	node87 [label="BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.853,backward_compute_time=1.618,activation_size=102760448.0,parameter_size=8192.0]"]
+[forward_compute_time=0.561,backward_compute_time=0.562,activation_size=102760448.0,parameter_size=8192.0]"]
 	node88 [label="Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
-[forward_compute_time=3.229,backward_compute_time=10.583,activation_size=102760448.0,parameter_size=2097152.0]"]
+[forward_compute_time=2.057,backward_compute_time=6.426,activation_size=102760448.0,parameter_size=2097152.0]"]
 	node89 [label="BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.852,backward_compute_time=1.404,activation_size=102760448.0,parameter_size=8192.0]"]
+[forward_compute_time=0.547,backward_compute_time=0.558,activation_size=102760448.0,parameter_size=8192.0]"]
 	node90 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=102760448.0,parameter_size=0.0]"]
 	node91 [label="ReLU(inplace)
-[forward_compute_time=1.902,backward_compute_time=1.686,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.647,backward_compute_time=0.792,activation_size=102760448.0,parameter_size=0.0]"]
 	node92 [label="Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.253,backward_compute_time=5.126,activation_size=25690112.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.049,backward_compute_time=2.322,activation_size=25690112.0,parameter_size=1048576.0]"]
 	node93 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.367,backward_compute_time=1.027,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.242,backward_compute_time=0.194,activation_size=25690112.0,parameter_size=2048.0]"]
 	node94 [label="ReLU(inplace)
-[forward_compute_time=1.292,backward_compute_time=1.548,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.103,backward_compute_time=0.130,activation_size=25690112.0,parameter_size=0.0]"]
 	node95 [label="Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=2.127,backward_compute_time=2.998,activation_size=25690112.0,parameter_size=2359296.0]"]
+[forward_compute_time=1.059,backward_compute_time=2.074,activation_size=25690112.0,parameter_size=2359296.0]"]
 	node96 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.601,backward_compute_time=1.253,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.240,backward_compute_time=0.198,activation_size=25690112.0,parameter_size=2048.0]"]
 	node97 [label="ReLU(inplace)
-[forward_compute_time=1.292,backward_compute_time=1.200,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.104,backward_compute_time=0.131,activation_size=25690112.0,parameter_size=0.0]"]
 	node98 [label="Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.969,backward_compute_time=5.371,activation_size=102760448.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.037,backward_compute_time=2.330,activation_size=102760448.0,parameter_size=1048576.0]"]
 	node99 [label="BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.632,backward_compute_time=1.548,activation_size=102760448.0,parameter_size=8192.0]"]
+[forward_compute_time=0.561,backward_compute_time=0.558,activation_size=102760448.0,parameter_size=8192.0]"]
 	node100 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=102760448.0,parameter_size=0.0]"]
 	node101 [label="ReLU(inplace)
-[forward_compute_time=1.786,backward_compute_time=1.790,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.646,backward_compute_time=0.768,activation_size=102760448.0,parameter_size=0.0]"]
 	node102 [label="Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.235,backward_compute_time=5.347,activation_size=25690112.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.050,backward_compute_time=2.377,activation_size=25690112.0,parameter_size=1048576.0]"]
 	node103 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.494,backward_compute_time=1.214,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.242,backward_compute_time=0.196,activation_size=25690112.0,parameter_size=2048.0]"]
 	node104 [label="ReLU(inplace)
-[forward_compute_time=1.192,backward_compute_time=1.481,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.105,backward_compute_time=0.131,activation_size=25690112.0,parameter_size=0.0]"]
 	node105 [label="Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=2.256,backward_compute_time=3.196,activation_size=25690112.0,parameter_size=2359296.0]"]
+[forward_compute_time=1.053,backward_compute_time=2.075,activation_size=25690112.0,parameter_size=2359296.0]"]
 	node106 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.569,backward_compute_time=1.379,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.246,backward_compute_time=0.192,activation_size=25690112.0,parameter_size=2048.0]"]
 	node107 [label="ReLU(inplace)
-[forward_compute_time=1.042,backward_compute_time=1.216,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.105,backward_compute_time=0.131,activation_size=25690112.0,parameter_size=0.0]"]
 	node108 [label="Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.174,backward_compute_time=5.160,activation_size=102760448.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.044,backward_compute_time=2.330,activation_size=102760448.0,parameter_size=1048576.0]"]
 	node109 [label="BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.609,backward_compute_time=1.736,activation_size=102760448.0,parameter_size=8192.0]"]
+[forward_compute_time=0.568,backward_compute_time=0.585,activation_size=102760448.0,parameter_size=8192.0]"]
 	node110 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=102760448.0,parameter_size=0.0]"]
 	node111 [label="ReLU(inplace)
-[forward_compute_time=1.635,backward_compute_time=1.935,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.647,backward_compute_time=0.768,activation_size=102760448.0,parameter_size=0.0]"]
 	node112 [label="Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.131,backward_compute_time=5.507,activation_size=25690112.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.063,backward_compute_time=2.326,activation_size=25690112.0,parameter_size=1048576.0]"]
 	node113 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.298,backward_compute_time=1.183,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.247,backward_compute_time=0.192,activation_size=25690112.0,parameter_size=2048.0]"]
 	node114 [label="ReLU(inplace)
-[forward_compute_time=1.099,backward_compute_time=1.515,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.102,backward_compute_time=0.129,activation_size=25690112.0,parameter_size=0.0]"]
 	node115 [label="Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=1.943,backward_compute_time=3.148,activation_size=25690112.0,parameter_size=2359296.0]"]
+[forward_compute_time=1.068,backward_compute_time=2.070,activation_size=25690112.0,parameter_size=2359296.0]"]
 	node116 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.270,backward_compute_time=1.290,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.692,backward_compute_time=0.198,activation_size=25690112.0,parameter_size=2048.0]"]
 	node117 [label="ReLU(inplace)
-[forward_compute_time=0.880,backward_compute_time=1.278,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.105,backward_compute_time=0.131,activation_size=25690112.0,parameter_size=0.0]"]
 	node118 [label="Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.643,backward_compute_time=5.441,activation_size=102760448.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.035,backward_compute_time=2.330,activation_size=102760448.0,parameter_size=1048576.0]"]
 	node119 [label="BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.417,backward_compute_time=1.591,activation_size=102760448.0,parameter_size=8192.0]"]
+[forward_compute_time=0.552,backward_compute_time=0.564,activation_size=102760448.0,parameter_size=8192.0]"]
 	node120 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=102760448.0,parameter_size=0.0]"]
 	node121 [label="ReLU(inplace)
-[forward_compute_time=1.589,backward_compute_time=2.006,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.648,backward_compute_time=0.769,activation_size=102760448.0,parameter_size=0.0]"]
 	node122 [label="Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.098,backward_compute_time=5.051,activation_size=25690112.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.055,backward_compute_time=2.326,activation_size=25690112.0,parameter_size=1048576.0]"]
 	node123 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.520,backward_compute_time=1.233,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.256,backward_compute_time=0.191,activation_size=25690112.0,parameter_size=2048.0]"]
 	node124 [label="ReLU(inplace)
-[forward_compute_time=0.911,backward_compute_time=1.463,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.104,backward_compute_time=0.132,activation_size=25690112.0,parameter_size=0.0]"]
 	node125 [label="Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=1.639,backward_compute_time=3.180,activation_size=25690112.0,parameter_size=2359296.0]"]
+[forward_compute_time=1.057,backward_compute_time=2.074,activation_size=25690112.0,parameter_size=2359296.0]"]
 	node126 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.674,backward_compute_time=1.417,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.240,backward_compute_time=0.198,activation_size=25690112.0,parameter_size=2048.0]"]
 	node127 [label="ReLU(inplace)
-[forward_compute_time=1.069,backward_compute_time=1.207,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.104,backward_compute_time=0.131,activation_size=25690112.0,parameter_size=0.0]"]
 	node128 [label="Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.514,backward_compute_time=5.185,activation_size=102760448.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.043,backward_compute_time=2.340,activation_size=102760448.0,parameter_size=1048576.0]"]
 	node129 [label="BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.845,backward_compute_time=1.684,activation_size=102760448.0,parameter_size=8192.0]"]
+[forward_compute_time=0.553,backward_compute_time=0.563,activation_size=102760448.0,parameter_size=8192.0]"]
 	node130 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=102760448.0,parameter_size=0.0]"]
 	node131 [label="ReLU(inplace)
-[forward_compute_time=1.448,backward_compute_time=1.782,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.647,backward_compute_time=0.800,activation_size=102760448.0,parameter_size=0.0]"]
 	node132 [label="Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.497,backward_compute_time=5.499,activation_size=25690112.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.060,backward_compute_time=2.609,activation_size=25690112.0,parameter_size=1048576.0]"]
 	node133 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.360,backward_compute_time=1.009,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.249,backward_compute_time=0.193,activation_size=25690112.0,parameter_size=2048.0]"]
 	node134 [label="ReLU(inplace)
-[forward_compute_time=0.932,backward_compute_time=1.329,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.105,backward_compute_time=0.131,activation_size=25690112.0,parameter_size=0.0]"]
 	node135 [label="Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=1.776,backward_compute_time=3.700,activation_size=25690112.0,parameter_size=2359296.0]"]
+[forward_compute_time=1.070,backward_compute_time=2.441,activation_size=25690112.0,parameter_size=2359296.0]"]
 	node136 [label="BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.449,backward_compute_time=1.244,activation_size=25690112.0,parameter_size=2048.0]"]
+[forward_compute_time=0.243,backward_compute_time=0.194,activation_size=25690112.0,parameter_size=2048.0]"]
 	node137 [label="ReLU(inplace)
-[forward_compute_time=1.029,backward_compute_time=1.310,activation_size=25690112.0,parameter_size=0.0]"]
+[forward_compute_time=0.103,backward_compute_time=0.173,activation_size=25690112.0,parameter_size=0.0]"]
 	node138 [label="Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.525,backward_compute_time=5.249,activation_size=102760448.0,parameter_size=1048576.0]"]
+[forward_compute_time=1.079,backward_compute_time=2.642,activation_size=102760448.0,parameter_size=1048576.0]"]
 	node139 [label="BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.613,backward_compute_time=1.773,activation_size=102760448.0,parameter_size=8192.0]"]
+[forward_compute_time=0.560,backward_compute_time=0.568,activation_size=102760448.0,parameter_size=8192.0]"]
 	node140 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=102760448.0,parameter_size=0.0]"]
 	node141 [label="ReLU(inplace)
-[forward_compute_time=1.316,backward_compute_time=1.834,activation_size=102760448.0,parameter_size=0.0]"]
+[forward_compute_time=0.647,backward_compute_time=0.774,activation_size=102760448.0,parameter_size=0.0]"]
 	node142 [label="Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=3.225,backward_compute_time=8.972,activation_size=51380224.0,parameter_size=2097152.0]"]
+[forward_compute_time=1.862,backward_compute_time=4.991,activation_size=51380224.0,parameter_size=2097152.0]"]
 	node143 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.565,backward_compute_time=1.303,activation_size=51380224.0,parameter_size=4096.0]"]
+[forward_compute_time=0.359,backward_compute_time=0.314,activation_size=51380224.0,parameter_size=4096.0]"]
 	node144 [label="ReLU(inplace)
-[forward_compute_time=1.090,backward_compute_time=1.313,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.170,backward_compute_time=0.237,activation_size=51380224.0,parameter_size=0.0]"]
 	node145 [label="Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
-[forward_compute_time=4.960,backward_compute_time=10.695,activation_size=12845056.0,parameter_size=9437184.0]"]
+[forward_compute_time=2.452,backward_compute_time=6.666,activation_size=12845056.0,parameter_size=9437184.0]"]
 	node146 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.366,backward_compute_time=1.219,activation_size=12845056.0,parameter_size=4096.0]"]
+[forward_compute_time=0.185,backward_compute_time=0.138,activation_size=12845056.0,parameter_size=4096.0]"]
 	node147 [label="ReLU(inplace)
-[forward_compute_time=0.890,backward_compute_time=1.282,activation_size=12845056.0,parameter_size=0.0]"]
+[forward_compute_time=0.068,backward_compute_time=0.084,activation_size=12845056.0,parameter_size=0.0]"]
 	node148 [label="Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.603,backward_compute_time=4.950,activation_size=51380224.0,parameter_size=4194304.0]"]
+[forward_compute_time=1.061,backward_compute_time=2.572,activation_size=51380224.0,parameter_size=4194304.0]"]
 	node149 [label="BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.567,backward_compute_time=1.462,activation_size=51380224.0,parameter_size=16384.0]"]
+[forward_compute_time=0.348,backward_compute_time=0.351,activation_size=51380224.0,parameter_size=16384.0]"]
 	node150 [label="Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
-[forward_compute_time=2.814,backward_compute_time=15.864,activation_size=51380224.0,parameter_size=8388608.0]"]
+[forward_compute_time=2.483,backward_compute_time=8.667,activation_size=51380224.0,parameter_size=8388608.0]"]
 	node151 [label="BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.500,backward_compute_time=1.323,activation_size=51380224.0,parameter_size=16384.0]"]
+[forward_compute_time=0.356,backward_compute_time=0.349,activation_size=51380224.0,parameter_size=16384.0]"]
 	node152 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=51380224.0,parameter_size=0.0]"]
 	node153 [label="ReLU(inplace)
-[forward_compute_time=1.328,backward_compute_time=1.543,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.322,backward_compute_time=0.394,activation_size=51380224.0,parameter_size=0.0]"]
 	node154 [label="Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.626,backward_compute_time=5.523,activation_size=12845056.0,parameter_size=4194304.0]"]
+[forward_compute_time=1.377,backward_compute_time=2.610,activation_size=12845056.0,parameter_size=4194304.0]"]
 	node155 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.368,backward_compute_time=1.093,activation_size=12845056.0,parameter_size=4096.0]"]
+[forward_compute_time=0.185,backward_compute_time=0.135,activation_size=12845056.0,parameter_size=4096.0]"]
 	node156 [label="ReLU(inplace)
-[forward_compute_time=0.817,backward_compute_time=1.562,activation_size=12845056.0,parameter_size=0.0]"]
+[forward_compute_time=0.070,backward_compute_time=0.092,activation_size=12845056.0,parameter_size=0.0]"]
 	node157 [label="Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=1.949,backward_compute_time=2.953,activation_size=12845056.0,parameter_size=9437184.0]"]
+[forward_compute_time=1.093,backward_compute_time=1.887,activation_size=12845056.0,parameter_size=9437184.0]"]
 	node158 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.619,backward_compute_time=1.229,activation_size=12845056.0,parameter_size=4096.0]"]
+[forward_compute_time=0.184,backward_compute_time=0.135,activation_size=12845056.0,parameter_size=4096.0]"]
 	node159 [label="ReLU(inplace)
-[forward_compute_time=1.008,backward_compute_time=1.169,activation_size=12845056.0,parameter_size=0.0]"]
+[forward_compute_time=0.069,backward_compute_time=0.082,activation_size=12845056.0,parameter_size=0.0]"]
 	node160 [label="Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=1.684,backward_compute_time=5.735,activation_size=51380224.0,parameter_size=4194304.0]"]
+[forward_compute_time=1.059,backward_compute_time=2.569,activation_size=51380224.0,parameter_size=4194304.0]"]
 	node161 [label="BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.920,backward_compute_time=1.553,activation_size=51380224.0,parameter_size=16384.0]"]
+[forward_compute_time=0.340,backward_compute_time=0.356,activation_size=51380224.0,parameter_size=16384.0]"]
 	node162 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=51380224.0,parameter_size=0.0]"]
 	node163 [label="ReLU(inplace)
-[forward_compute_time=1.211,backward_compute_time=1.665,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.323,backward_compute_time=0.423,activation_size=51380224.0,parameter_size=0.0]"]
 	node164 [label="Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.444,backward_compute_time=6.960,activation_size=12845056.0,parameter_size=4194304.0]"]
+[forward_compute_time=1.385,backward_compute_time=3.239,activation_size=12845056.0,parameter_size=4194304.0]"]
 	node165 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.731,backward_compute_time=1.218,activation_size=12845056.0,parameter_size=4096.0]"]
+[forward_compute_time=0.188,backward_compute_time=0.138,activation_size=12845056.0,parameter_size=4096.0]"]
 	node166 [label="ReLU(inplace)
-[forward_compute_time=1.399,backward_compute_time=1.582,activation_size=12845056.0,parameter_size=0.0]"]
+[forward_compute_time=0.069,backward_compute_time=0.092,activation_size=12845056.0,parameter_size=0.0]"]
 	node167 [label="Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-[forward_compute_time=1.945,backward_compute_time=4.088,activation_size=12845056.0,parameter_size=9437184.0]"]
+[forward_compute_time=1.102,backward_compute_time=2.889,activation_size=12845056.0,parameter_size=9437184.0]"]
 	node168 [label="BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=2.186,backward_compute_time=1.269,activation_size=12845056.0,parameter_size=4096.0]"]
+[forward_compute_time=0.552,backward_compute_time=0.136,activation_size=12845056.0,parameter_size=4096.0]"]
 	node169 [label="ReLU(inplace)
-[forward_compute_time=1.226,backward_compute_time=1.243,activation_size=12845056.0,parameter_size=0.0]"]
+[forward_compute_time=0.070,backward_compute_time=0.420,activation_size=12845056.0,parameter_size=0.0]"]
 	node170 [label="Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
-[forward_compute_time=2.328,backward_compute_time=6.264,activation_size=51380224.0,parameter_size=4194304.0]"]
+[forward_compute_time=1.061,backward_compute_time=3.632,activation_size=51380224.0,parameter_size=4194304.0]"]
 	node171 [label="BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-[forward_compute_time=1.711,backward_compute_time=1.377,activation_size=51380224.0,parameter_size=16384.0]"]
+[forward_compute_time=0.352,backward_compute_time=0.377,activation_size=51380224.0,parameter_size=16384.0]"]
 	node172 [label="Add(inplace)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=51380224.0,parameter_size=0.0]"]
 	node173 [label="ReLU(inplace)
-[forward_compute_time=1.262,backward_compute_time=1.325,activation_size=51380224.0,parameter_size=0.0]"]
+[forward_compute_time=0.324,backward_compute_time=0.245,activation_size=51380224.0,parameter_size=0.0]"]
 	node174 [label="AvgPool2d(kernel_size=7, stride=1, padding=0)
-[forward_compute_time=1.402,backward_compute_time=1.697,activation_size=1048576.0,parameter_size=0.0]"]
+[forward_compute_time=0.462,backward_compute_time=0.381,activation_size=1048576.0,parameter_size=0.0]"]
 	node175 [label="Size(0)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=4,parameter_size=0.0]"]
 	node176 [label="View(-1)
 [forward_compute_time=0.000,backward_compute_time=0.000,activation_size=1048576.0,parameter_size=0.0]"]
 	node177 [label="Linear(in_features=2048, out_features=1000, bias=True)
-[forward_compute_time=1.686,backward_compute_time=1.071,activation_size=512000.0,parameter_size=8196000.0]"]
+[forward_compute_time=0.195,backward_compute_time=0.178,activation_size=512000.0,parameter_size=8196000.0]"]
 	node1 -> node2
 	node2 -> node3
 	node3 -> node4
