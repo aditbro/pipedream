@@ -299,7 +299,7 @@ def main():
         current_time = time.time()
         print('\n')
         print('RESUMING TRAINING')
-        print('epoch {}, time {}'.format(epoch, current_time))
+        print('epoch {}, time {}'.format(args.start_epoch, current_time))
         print('\n')
         validate(val_loader, r, args.start_epoch-1)
 
