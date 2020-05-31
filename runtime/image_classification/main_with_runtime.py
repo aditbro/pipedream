@@ -296,12 +296,14 @@ def main():
     # if checkpoint is loaded, start by running validation
     if args.resume:
         assert args.start_epoch > 0
+        current_time = time.time()
+        print('\n')
+        print('RESUMING TRAINING')
+        print('epoch {}, time {}'.format(epoch, current_time))
+        print('\n')
         validate(val_loader, r, args.start_epoch-1)
 
     for epoch in range(args.start_epoch, args.epochs):
-        current_time = time.time()
-        print('epoch {}, time {}'.format(epoch, current_time))
-        
         if distributed_sampler:
             train_sampler.set_epoch(epoch)
 
